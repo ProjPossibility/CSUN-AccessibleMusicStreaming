@@ -210,7 +210,18 @@ td { vertical-align: top; }
 /* ==|== primary styles =====================================================
    Author: 
    ========================================================================== */
+/* Logo Style */
+.logo_blue{
+	color: blue;
+	font-size: x-large;
+}
 
+.logo_red{
+	color: red;
+	color: xx-large;
+	font-size: 48pt;
+	font-family: arial;
+}
 
 
 
