@@ -18,6 +18,12 @@
 
 	  <!-- CSS: implied media=all -->
 	  <link rel="stylesheet" href="css/style.css">
+	  <link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.8.17.custom.css">
+	  <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+
+	  <style type="text/css">
+	    #slider { margin: 10px; }
+	  </style>
 	  <!-- end CSS-->
 
 
@@ -32,7 +38,7 @@
 		</header>
 		<div id="main" role="main">
 			<article>
-				<section>
+				<section class="radio_player">
 					<header>
 						<h2>Player</h2>
 					</header>
@@ -41,7 +47,14 @@
 					<button id="previous">Previous</button>
 					<button id="playPause">Play</button>
 					<button id="next">Next</button>
+					<div>
+						<label for="volume">Volume: </label>
+						<input type="text" id="volume" style="border:0; color:#f6931f; font-weight:bold;" />
+					</div>
+					<div id="slider-range-min"></div>
+					
 				</section>
+				
 			</article>
 		</div>
 		<footer>
@@ -57,6 +70,23 @@
 	  <script src="https://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
 	  <script src="js/token.js"></script>
 	  <script src="js/controls.js"></script>
+	  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+
+
+	<script>
+		$(function() {
+			$( "#slider-range-min" ).slider({
+				range: "min",
+				value: 37,
+				min: 1,
+				max: 700,
+				slide: function( event, ui ) {
+					$( "#volume" ).val( ui.value );
+				}
+			});
+			$( "#amount" ).val( "$" + $( "#slider-range-min" ).slider( "value" ) );
+		});
+		</script>
 
 
 	  <!-- scripts concatenated and minified via ant build script-->

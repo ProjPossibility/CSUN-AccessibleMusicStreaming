@@ -222,12 +222,19 @@ td { vertical-align: top; }
 	font-size: 48pt;
 	font-family: arial;
 }
+body {background-image:url('/img/perforated_white_leather.png');}
+header {border:1px solid black;padding:10px;}
+footer {border:1px solid black;padding:10px;}
+#container{padding:10px;}
+#main {padding:10px 0px;}
 
 
 
-
-
-
+.radio_player {
+	width:400px;
+	padding:10px;
+	border:1px solid black;;
+}
 
 
 
