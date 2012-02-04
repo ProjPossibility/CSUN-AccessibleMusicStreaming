@@ -79,12 +79,12 @@
 				range: "min",
 				value: 37,
 				min: 1,
-				max: 700,
+				max: 100,
 				slide: function( event, ui ) {
 					$( "#volume" ).val( ui.value );
 				}
 			});
-			$( "#amount" ).val( "$" + $( "#slider-range-min" ).slider( "value" ) );
+			$( "#volume" ).val( $( "#slider-range-min" ).slider( "value" ) );
 		});
 		</script>
 
