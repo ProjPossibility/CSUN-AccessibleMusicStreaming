@@ -49,7 +49,7 @@
 					<button id="next">Next</button>
 					<div>
 						<label for="volume">Volume: </label>
-						<input type="text" id="volume" style="border:0; color:#f6931f; font-weight:bold;" />
+						<input type="text" id="volume" style="border:0; color:#f6931f; font-weight:bold;" value="37" />
 					</div>
 					<div id="slider-range-min"></div>
 					
@@ -79,7 +79,7 @@
 				range: "min",
 				value: 37,
 				min: 1,
-				max: 700,
+				max: 100,
 				slide: function( event, ui ) {
 					$( "#volume" ).val( ui.value );
 				}
