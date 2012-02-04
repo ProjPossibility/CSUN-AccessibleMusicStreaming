@@ -22,6 +22,10 @@
 
 
 	  <script src="js/libs/modernizr-2.0.6.min.js"></script>
+	  <script src="js/libs/jquery-1.6.2.min.js"></script>
+	  <script src="https://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
+	  <script src="js/token.js"></script>
+	  <script src="js/controls.js"></script>
 	</head>
 
 	<body>
@@ -31,7 +35,18 @@
 			<h1><span class= "logo_blue">r</span><em class= "logo_red">a</em><span class= "logo_blue">dio</span></h1>
 		</header>
 		<div id="main" role="main">
-			<h1>We're Gonna Win!!!</h1>
+			<article>
+				<section>
+					<header>
+						<h2>Player</h2>
+					</header>
+					<div id="apiswf"></div>
+					<input id="play_key" value="a997982"><br />
+					<button id="previous">Previous</button>
+					<button id="playPause">Play</button>
+					<button id="next">Next</button>
+				</section>
+			</article>
 		</div>
 		<footer>
 			footer

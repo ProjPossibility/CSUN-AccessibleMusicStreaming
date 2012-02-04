@@ -22,6 +22,7 @@ THE SOFTWARE.
 
 // a global variable that will hold a reference to the api swf once it has loaded
 var apiswf = null;
+var myPlayState = null;	//0 - paused, 1 - playing, 2 - stopped, 3 - buffering or 4 - paused.
 
 $(document).ready(function() {
   // on page load use SWFObject to load the API swf into div#apiswf
@@ -39,66 +40,64 @@ $(document).ready(function() {
       1, 1, '9.0.0', 'expressInstall.swf', flashvars, params, attributes);
 
 
-  // set up the controls
-  $('#play').click(function() {
-    apiswf.rdio_play($('#play_key').val());
-  });
-  $('#stop').click(function() { apiswf.rdio_stop(); });
-  $('#pause').click(function() { apiswf.rdio_pause(); });
-  $('#previous').click(function() { apiswf.rdio_previous(); });
-  $('#next').click(function() { apiswf.rdio_next(); });
+	// set up the controls
+	$('#playPause').click(function() {
+		if(myPlayState == null){	//play for the first time
+			apiswf.rdio_play($('#play_key').val());
+			$('#playPause').text("Pause");
+			console.log("start playing");
+		}
+		else if(myPlayState == 0 || myPlayState ==4){	//resume from pause
+			apiswf.rdio_play();
+		}
+		else{	//pause
+			apiswf.rdio_pause();
+			$('#playPause').text("Play");
+			console.log("pause the song");
+		}
+	});
+	$('#previous').click(function() { apiswf.rdio_previous(); });
+	$('#next').click(function() { apiswf.rdio_next(); });
 });
-
 
 // the global callback object
 var callback_object = {};
 
 callback_object.ready = function ready(user) {
   // Called once the API SWF has loaded and is ready to accept method calls.
-
   // find the embed/object element
   apiswf = $('#apiswf').get(0);
 
-  apiswf.rdio_startFrequencyAnalyzer({
-    frequencies: '10-band',
-    period: 100
-  });
-
-  if (user == null) {
-    $('#nobody').show();
-  } else if (user.isSubscriber) {
-    $('#subscriber').show();
-  } else if (user.isTrial) {
-    $('#trial').show();
-  } else if (user.isFree) {
-    $('#remaining').text(user.freeRemaining);
-    $('#free').show();
-  } else {
-    $('#nobody').show();
-  }
-
-  console.log(user);
-}
-
-callback_object.freeRemainingChanged = function freeRemainingChanged(remaining) {
-  $('#remaining').text(remaining);
 }
 
 callback_object.playStateChanged = function playStateChanged(playState) {
-  // The playback state has changed.
-  // The state can be: 0 - paused, 1 - playing, 2 - stopped, 3 - buffering or 4 - paused.
-  $('#playState').text(playState);
+	// The state can be: 0 - paused, 1 - playing, 2 - stopped, 3 - buffering or 4 - paused.
+	myPlayState = playState;
+	console.log("Player state: " + playState);
+}
+
+
+
+
+
+
+
+
+//Handy callbacks I don't want to delete
+
+callback_object.freeRemainingChanged = function freeRemainingChanged(remaining) {
+	$('#remaining').text(remaining);
 }
 
 callback_object.playingTrackChanged = function playingTrackChanged(playingTrack, sourcePosition) {
   // The currently playing track has changed.
   // Track metadata is provided as playingTrack and the position within the playing source as sourcePosition.
-  if (playingTrack != null) {
-    $('#track').text(playingTrack['name']);
-    $('#album').text(playingTrack['album']);
-    $('#artist').text(playingTrack['artist']);
-    $('#art').attr('src', playingTrack['icon']);
-  }
+  //if (playingTrack != null) {
+  //  $('#track').text(playingTrack['name']);
+  //  $('#album').text(playingTrack['album']);
+  //  $('#artist').text(playingTrack['artist']);
+  //  $('#art').attr('src', playingTrack['icon']);
+  //}
 }
 
 callback_object.playingSourceChanged = function playingSourceChanged(playingSource) {
@@ -143,10 +142,10 @@ callback_object.updateFrequencyData = function updateFrequencyData(arrayAsString
   // Called with frequency information after apiswf.rdio_startFrequencyAnalyzer(options) is called.
   // arrayAsString is a list of comma separated floats.
 
-  var arr = arrayAsString.split(',');
+ // var arr = arrayAsString.split(',');
 
-  $('#freq div').each(function(i) {
-    $(this).width(parseInt(parseFloat(arr[i])*500));
-  })
+ // $('#freq div').each(function(i) {
+ //   $(this).width(parseInt(parseFloat(arr[i])*500));
+ // })
 }
 
