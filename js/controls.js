@@ -45,15 +45,14 @@ $(document).ready(function() {
 		if(myPlayState == null){	//play for the first time
 			apiswf.rdio_play($('#play_key').val());
 			$('#playPause').text("Pause");
-			console.log("start playing");
 		}
 		else if(myPlayState == 0 || myPlayState ==4){	//resume from pause
 			apiswf.rdio_play();
+			$('#playPause').text("Pause");
 		}
 		else{	//pause
 			apiswf.rdio_pause();
 			$('#playPause').text("Play");
-			console.log("pause the song");
 		}
 	});
 	$('#previous').click(function() { apiswf.rdio_previous(); });
@@ -73,7 +72,6 @@ callback_object.ready = function ready(user) {
 callback_object.playStateChanged = function playStateChanged(playState) {
 	// The state can be: 0 - paused, 1 - playing, 2 - stopped, 3 - buffering or 4 - paused.
 	myPlayState = playState;
-	console.log("Player state: " + playState);
 }
 
 
