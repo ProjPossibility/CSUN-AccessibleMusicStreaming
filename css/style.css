@@ -229,13 +229,13 @@ footer {border:1px solid black;padding:10px;}
 #main {padding:10px 0px;}
 
 .box_gradient {
-  background-color: #012533;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#012533), to(#054963)); /* Saf4+, Chrome */
-  background-image: -webkit-linear-gradient(top, #012533, #054963); /* Chrome 10+, Saf5.1+, iOS 5+ */
-  background-image:    -moz-linear-gradient(top, #012533, #054963); /* FF3.6 */
-  background-image:     -ms-linear-gradient(top, #012533, #054963); /* IE10 */
-  background-image:      -o-linear-gradient(top, #012533, #054963); /* Opera 11.10+ */
-  background-image:         linear-gradient(to bottom, #012533, #054963);
+  background-color: #837C63;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#837C63), to(#BAB4AB)); /* Saf4+, Chrome */
+  background-image: -webkit-linear-gradient(top, #837C63, #BAB4AB); /* Chrome 10+, Saf5.1+, iOS 5+ */
+  background-image:    -moz-linear-gradient(top, #837C63, #BAB4AB); /* FF3.6 */
+  background-image:     -ms-linear-gradient(top, #837C63, #BAB4AB); /* IE10 */
+  background-image:      -o-linear-gradient(top, #837C63, #BAB4AB); /* Opera 11.10+ */
+  background-image:         linear-gradient(to bottom, #837C63, #BAB4AB);
 }
 
 h2 {font-size:1.1em;padding:5px;margin:0;}
@@ -244,7 +244,7 @@ h2 em {font-size:1.3em;color:red;}
 /*==================== */
 /* Player Style */
 /*==================== */
-
+.
 #volume {
 	width:3em;
 	border-radius: 3px 3px 3px 3px;
@@ -253,14 +253,20 @@ h2 em {font-size:1.3em;color:red;}
 	border: 1px solid grey;
 	text-align: right;
 }
-#volume_control {margin-left:102px;}
+
+#volume_control {
+	padding:10px;
+	background-color:black;
+	margin:2px 0;
+	}
+ui-slider, ui-slider-horizontal {height:4px;}
 
 .radio_player {
 	width:400px;
 	padding:10px;
 	border:1px solid black;
-	background-color: rgb( 5,73,99);
-	background: url('../img/vertical_cloth.png');
+	background-color: rgb( 0,0,0);
+
 	color: rgb(246,249,254);
 }
 
@@ -288,74 +294,7 @@ ol#playlist {}
 #album_art img {background-color:black;width:100px;height:100px;}
 
 
-
-
-/* ==|== non-semantic helper classes ========================================
-   Please define your styles before this section.
-   ========================================================================== */
-
-/* For image replacement */
-.ir { display: block; border: 0; text-indent: -999em; overflow: hidden; background-color: transparent; background-repeat: no-repeat; text-align: left; direction: ltr; }
-.ir br { display: none; }
-
-/* Hide from both screenreaders and browsers: h5bp.com/u */
-.hidden { display: none !important; visibility: hidden; }
-
-/* Hide only visually, but have it available for screenreaders: h5bp.com/v */
-.visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
-
-/* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: h5bp.com/p */
-.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
-
-/* Hide visually and from screenreaders, but maintain layout */
-.invisible { visibility: hidden; }
-
-/* Contain floats: h5bp.com/q */ 
-.clearfix:before, .clearfix:after { content: ""; display: table; }
-.clearfix:after { clear: both; }
-.clearfix { zoom: 1; }
-
-
-
-/* ==|== media queries ======================================================
-   PLACEHOLDER Media Queries for Responsive Design.
-   These override the primary ('mobile first') styles
-   Modify as content requires.
-   ========================================================================== */
-
-@media only screen and (min-width: 480px) {
-  /* Style adjustments for viewports 480px and over go here */
-
-}
-
-@media only screen and (min-width: 768px) {
-  /* Style adjustments for viewports 768px and over go here */
-
-}
-
-
-
-/* ==|== print styles =======================================================
-   Print styles.
-   Inlined to avoid required HTTP connection: h5bp.com/r
-   ========================================================================== */
- 
-@media print {
-  * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: h5bp.com/s */
-  a, a:visited { text-decoration: underline; }
-  a[href]:after { content: " (" attr(href) ")"; }
-  abbr[title]:after { content: " (" attr(title) ")"; }
-  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  /* Don't show links for images, or javascript/internal links */
-  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
-  thead { display: table-header-group; } /* h5bp.com/t */
-  tr, img { page-break-inside: avoid; }
-  img { max-width: 100% !important; }
-  @page { margin: 0.5cm; }
-  p, h2, h3 { orphans: 3; widows: 3; }
-  h2, h3 { page-break-after: avoid; }
-}
-
-
+/* BUTTON CSS */
 #page-container {
 	width:640px;
 	overflow:hidden;
@@ -392,6 +331,7 @@ ol#playlist {}
 	-moz-box-shadow: 0px 2px 0 #404040;
 	-webkit-box-shadow: 0px 2px 0 #404040;
 	box-shadow: 0px 2px 0 #404040;
+	list-style:none;
 }
 
 .playbackOptions li:hover {
@@ -462,3 +402,71 @@ ol#playlist {}
 	text-indent:-9999px;
 	width:0;
 }
+
+
+
+/* ==|== non-semantic helper classes ========================================
+   Please define your styles before this section.
+   ========================================================================== */
+
+/* For image replacement */
+.ir { display: block; border: 0; text-indent: -999em; overflow: hidden; background-color: transparent; background-repeat: no-repeat; text-align: left; direction: ltr; }
+.ir br { display: none; }
+
+/* Hide from both screenreaders and browsers: h5bp.com/u */
+.hidden { display: none !important; visibility: hidden; }
+
+/* Hide only visually, but have it available for screenreaders: h5bp.com/v */
+.visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+
+/* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: h5bp.com/p */
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+
+/* Hide visually and from screenreaders, but maintain layout */
+.invisible { visibility: hidden; }
+
+/* Contain floats: h5bp.com/q */ 
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+
+
+
+/* ==|== media queries ======================================================
+   PLACEHOLDER Media Queries for Responsive Design.
+   These override the primary ('mobile first') styles
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 480px) {
+  /* Style adjustments for viewports 480px and over go here */
+
+}
+
+@media only screen and (min-width: 768px) {
+  /* Style adjustments for viewports 768px and over go here */
+
+}
+
+
+
+/* ==|== print styles =======================================================
+   Print styles.
+   Inlined to avoid required HTTP connection: h5bp.com/r
+   ========================================================================== */
+ 
+@media print {
+  * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: h5bp.com/s */
+  a, a:visited { text-decoration: underline; }
+  a[href]:after { content: " (" attr(href) ")"; }
+  abbr[title]:after { content: " (" attr(title) ")"; }
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  /* Don't show links for images, or javascript/internal links */
+  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+  thead { display: table-header-group; } /* h5bp.com/t */
+  tr, img { page-break-inside: avoid; }
+  img { max-width: 100% !important; }
+  @page { margin: 0.5cm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3 { page-break-after: avoid; }
+}
+
