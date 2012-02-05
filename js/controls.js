@@ -28,6 +28,7 @@ var DEFAULT_VOLUME = 5;
 
 var songDuration = 0;
 var SEEK_STEP_SIZE = 10;			//seek 20 seconds at a time
+var shortcut_keys_visible = 0;
 
 
 // a global variable that will hold a reference to the api swf once it has loaded
@@ -60,6 +61,12 @@ $(document).ready(function() {
 	shortcut.add('down', function(){volumeDown(); return false;});
 	shortcut.add('f', seekForward);
 	shortcut.add('d', seekBackward);
+//	shortcut.add("/", helperMenuToggle);
+	document.onkeyup = function(event){		/* Work around for "Shift+?" */
+		if(event.keyCode == 191){
+			shortcutKeysToggle();
+		}
+	};
 
 	//set up volume slider
 	$(function() {
@@ -184,6 +191,20 @@ function parseTimeFromSeconds(seconds){
 
 function pad2(number) {
 	return (number < 10 ? '0' : '') + number
+}
+
+function shortcutKeysToggle(){
+	var classes = $("#shortcut_keys").attr("class").split(" ");
+	if(shortcut_keys_visible == 0){
+		classes.pop("visuallyhidden");
+		shortcut_keys_visible = 1;
+	}else{
+		classes.push("visuallyhidden");
+		shortcut_keys_visible = 0;
+	}
+	var newOne = classes.join(" ");
+	$("#shortcut_keys").attr("class", classes.join(" "));
+	console.log("new class attr: " + newOne);
 }
 
 

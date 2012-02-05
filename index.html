@@ -30,14 +30,13 @@
 	</head>
 
 	<body>
-
-	  <div id="container">
+	<div id="container">
 		<header>
 			<h1 class="logo_thick">r<em>a</em>dio</h1>
 		</header>
 		<div id="main" role="main">
 			<article>
-				<section id="shortcut_keys">
+				<section id="shortcut_keys" class= "focusable box_shadow_big visuallyhidden" tabindex="0">	<!-- class 'visuallyhidden' must be last --->
 					<h2>Shortcut Keys</h2>
 					<h3>You may use the following commands on your keyboard to access shortcuts for this player</h3>
 					<dl>
@@ -66,15 +65,13 @@
 						<dd>rewind music 10 seconds</dd>
 						
 					</dl>
-				</section>
-				
-				
-				<div id="apiswf"></div>
+			</section>
+			<div id="apiswf"></div>
 				<section id= "radio_player" class= "box_round">
 					<section class="clearfix" >
 						<div><img src="img/cd.png" alt="Album Art" id="album_art"/></div>
 						<div id="song_title"></div>
-						<div id="artist"></div>
+						<div id="artist"></div><br />
 						<div id="album"></div>
 					</section>
 					<input id="play_key" class="hidden" value="a997982"><br />
