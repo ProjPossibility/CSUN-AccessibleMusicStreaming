@@ -373,7 +373,7 @@ ol#playlist {}
 	-webkit-border-radius: 10px;
 	overflow:hidden;
 	height: 60px;
-	width: 240px;
+	width: 270px;
 }
 
 #play-backContainer a {
@@ -428,21 +428,6 @@ ol#playlist {}
 	width:7px;
 }
 
-.stopBtn {
-	padding:12px 11px 6px 5px;
-}
-
-.stopBtn a{
-	border-color:#FFFFFF;
-	border-style:solid;
-	border-width:7px;
-	float:left;
-	height:0;
-	margin:0 1.5em 0 0.4em;
-	text-indent:-9999px;
-	width:0;
-}
-
 .forwardBtn {
 	padding:10px 13px 7px 3px;
 }
@@ -476,31 +461,4 @@ ol#playlist {}
 	margin:0 1.5em 0 0.4em;
 	text-indent:-9999px;
 	width:0;
-}
-
-.ejectBtn {
-	padding:7px 12px 9px 4px;
-}
-
-
-.ejectBtn a.arrow{
-	border-color:transparent transparent #FFFFFF transparent;
-	border-style:solid;
-	border-width:0px 8px 12px 8px;
-	float:left;
-	height:0;
-	margin:0 1.5em 0 0.4em;
-	text-indent:-9999px;
-	width:0;
-}
-
-.ejectBtn a.dash{
-	border-color:transparent transparent #FFFFFF transparent;
-	border-style:solid;
-	border-width:0px 0 4px 0;
-	float:left;
-	height:3px;
-	margin:0 1.5em 0 0.4em;
-	text-indent:-9999px;
-	width:16px;
 }
