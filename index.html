@@ -42,9 +42,7 @@
 					<header>
 						<h2 class="box_gradient">r<em>a</em>dio Player</h2>
 					</header>
-					
 				
-					
 					<section class="clearfix">
 						<div id="album_art"><img src="http://placekitten.com/g/98/98" alt"Album Art" /></div>
 						<div id="song_title">Song Title 1 (Album Name)</div>
@@ -55,6 +53,10 @@
 							<button id="playPause">Play</button>
 							<button id="next">Next</button> 
 						</div>
+							<div class= "visuallyhidden focusable">
+								<label for="volume">Volume: </label>
+								<input type="text" id="volume" style="border:0; color:#f6931f; font-weight:bold;" />
+							</div>
 						<div id="volume_control"><div id="slider-range-min"></div></div>
 					</section>
 					<section id="playlistSection" class="clearfix">
@@ -85,6 +87,7 @@
 	  <script src="js/token.js"></script>
 	  <script src="js/controls.js"></script>
 	  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+	  <script src="js/shortcuts.js"></script>
 
 
 	<script>/*
