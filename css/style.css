@@ -287,8 +287,7 @@ ui-slider, ui-slider-horizontal {height:4px;}
 	width:400px;
 	padding:10px;
 	border:1px solid black;
-	background-color: rgb( 0,0,0);
-
+	background-color: rgb( 2,0,0);
 	color: rgb(246,249,254);
 }
 
@@ -302,6 +301,10 @@ section#playlistSection {
 ol#playlist {}
 #playlist li {color:black;border-bottom:1px solid black;list-style:none;margin:0;}
 #playlist li:hover {background-color:white;}
+
+#song_title {font-size:1.2em;font-weight:bold;}
+#artist {color:#696969;}
+#album {color:#696969;}
 
 #album_art {
 	width:100px;
