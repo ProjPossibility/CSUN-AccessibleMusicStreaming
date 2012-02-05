@@ -239,8 +239,10 @@ header {
 }
 
 footer {
-	border:1px solid black;
 	padding:10px;
+	width: 960px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 #container{
@@ -279,16 +281,22 @@ hr{
 	border-top: 1px solid #777;
 	margin: 10px auto 5px auto;
 	width: 90%;
+	height: 2px;
 }
 /*==================== */
 /* Shortcut styles */
 /*==================== */
 #shortcut_keys {
-	border-left:1px? solid black;
+	border-left:1px solid black;
 	border-right:1px solid black;
 	border-top:1px solid black;
+	background: #f1f2f4;
 	width:500px;
-	background:#f1f2f4;
+	margin-left: -250px;	/*half of width*/
+	z-index: 100;
+	top: 20px;
+	left: 50%;
+	position: absolute;
 }
 
 #shortcut_keys h2 {
@@ -307,6 +315,7 @@ hr{
 	padding:5px;
 	font-variant:small-caps;
 }
+/*
 #shortcut_keys dl {
 	margin:0;
 	padding:0;
@@ -327,6 +336,21 @@ hr{
 	padding-left:8px;
 	font-variant:small-caps;
 	
+} */
+ul#shortcut_keys {margin:0;padding:0;}
+
+#shortcut_keys li {
+	list-style:none;
+	border-bottom:1px solid black;
+	margin:0;
+	padding:0;
+	font-variant:small-caps;
+}
+#shortcut_keys li.shortcut {
+	font-size:1.2em;
+	font-weight:bold;
+	border:none;
+	margin-top:8px;
 }
 
 
@@ -456,8 +480,6 @@ footer ul li {
 	margin:0;
 	padding:0 5px;	
 	font-size:.7em;
-	border-right:1px solid black;
-
 }
 
 footer ul li.first {
@@ -487,6 +509,9 @@ footer ul li em {font-weight:bold;}
 	overflow: hidden;
 	height: auto;
 	text-align:center;
+	display: table;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 #play-backContainer a {
@@ -664,6 +689,13 @@ section #playlistSection {
   -webkit-box-shadow: 0px 0px 4px #ffffff; /* Saf3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
      -moz-box-shadow: 0px 0px 4px #ffffff; /* FF3.5 - 3.6 */
           box-shadow: 0px 0px 4px #ffffff; /* Opera 10.5, IE9, FF4+, Chrome 6+, iOS 5 */
+}
+
+.box_shadow_big{
+	-webkit-box-shadow: 10px 10px 10px #111111; /* Saf3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+	-moz-box-shadow: 10px 10px 10px #111111; /* FF3.5 - 3.6 */
+	box-shadow: 10px 10px 10px #111111; /* Opera 10.5, IE9, FF4+, Chrome 6+, iOS 5 */
+	
 }
 
 

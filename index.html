@@ -37,62 +37,63 @@
 		</header>
 		<div id="main" role="main">
 			<article>
-				<section id="shortcut_keys">
-					<h2>Shortcut Keys</h2>
-					<h3>You may use the following commands on your keyboard to access shortcuts for this player</h3>
-					<dl>
-						<dt>?</dt>
-						<dd>shortcut key listing - this menu</dd>
+				<section id="shortcut_keys" class= "focusable box_shadow_big visuallyhidden" tabindex="0">	
+				<!-- class 'visuallyhidden' must be last -->
+					<h2 tabindex="1">Shortcut Keys</h2>
+					<h3 tabindex="2">You may use the following commands on your keyboard to access shortcuts for this player</h3>
+					
+					<ul id="shortcuts" role="list" tabindex="3">
+						<li role="listitem" class="shortcut">?</li>
+						<li role="listitem">shortcut key listing - this menu</li>
 						
-						<dt>spacebar</dt>
-						<dd>play or pause the the music player</dd>
+						<li role="listitem" class="shortcut">spacebar</li>
+						<li role="listitem">play or pause the the music player</li>
 						
-						<dt>right arrow key</dt>
-						<dd>previous song<dd>
+						<li role="listitem" class="shortcut">right arrow key</li>
+						<li role="listitem">previous song</li>
 							
-						<dt>left arrow key</dt>
-						<dd>next song</dd>
+						<li role="listitem" class="shortcut">left arrow key</li>
+						<li role="listitem">next song</li>
 						
-						<dt>up arrow key</dt>
-						<dd>increase volume</dd>
+						<li role="listitem" class="shortcut">up arrow key</li>
+						<li role="listitem">increase volume</li>
 						
-						<dt>down arrow key<dt>
-						<dd>decrease volume</dd>
+						<li role="listitem"  class="shortcut">down arrow key</li>
+						<li role="listitem">decrease volume</li>
 						
-						<dt>f</dt>
-						<dd>fast forwards music 10 seconds</dd>
+						<li role="listitem" class="shortcut">f</li>
+						<li role="listitem">fast forwards music 10 seconds</li>
 						
-						<dt>d</dt>
-						<dd>rewind music 10 seconds</dd>
+						<li role="listitem" class="shortcut">d</li>
+						<li role="listitem">rewind music 10 seconds</li>
 						
-					</dl>
-				</section>
-				
-				
-				<div id="apiswf"></div>
-				<section id= "radio_player" class= "box_round">
+					</ul>
+					
+			</section>
+			<div id="apiswf"></div>
+				<section id="radio_player" class="box_round">
 					<section class="clearfix" >
 						<div><img src="img/cd.png" alt="Album Art" id="album_art"/></div>
 						<div id="song_title"></div>
-						<div id="artist"></div>
+						<div id="artist"></div><br />
 						<div id="album"></div>
 					</section>
 					<input id="play_key" class="hidden" value="a997982"><br />
 					<div id="songProgress"></div>	<!-- REPLACED WITH SEEK BAR	-->
 					<div id= "playerTime"></div>	<!-- REPLACED WITH TEXT SHOWING TRACK POSITION -->
 					<hr>
-					<section>
+	
+
 					<div id="play-backContainer" class="box_round">
-						
 						<div class="clearfix" id="inner_container">
 							<div id="player_container">
 								<div id="player_image_container">
 									<div class="clearfix" id="playerNowPlayingContainer">
 						        		<div class="clearfix">
-						          			<button class="" title="play previous song" id="previous"></button>
-						          			<button class="" title="play song" id="playPause"></button>
-						          			<button id="pauseButton" title="pause song"></button>
-						          			<button class="" id="next" title="play next song"></button>
+						          			<button tabindex="7" class="" title="play previous song" id="previous"></button>
+						          			<button tabindex="8" class="" title="play song" id="playPause"></button>
+						          			<button tabindex="9" class="" id="pauseButton" title="pause song"></button>
+						          			<button tabindex="10" class="" id="next" title="play next song"></button>
 										</div>
 						      		</div> <!-- end #playerNowPlayingContainer-->
 								</div>
@@ -100,11 +101,12 @@
 						 </div> 
 					</div> <!-- end #play-backContainer -->
 					</section>
+					<section>
 					
 						<div id= "volumeControlContainer">
 							<div id="slider-range-min"></div>
 						</div>
-					</div>
+			
 						
 						<div class= "visuallyhidden focusable">
 							<label for="volume">Volume: </label>
@@ -115,11 +117,11 @@
 			</article>
 		</div>
 		<footer class="clearfix">
-			<ul>
+			<ul id= "poweredBy">
 				<li class="first">&copy; 2012 by TeamGreen</li>
-				<li><em>created by:</em><br/> Team Green</li>
-				<li><em>powered by:</em><br/> 
-					<a title="rdio.com website" href="hhtp://www.rdio.com"><img height="30" src="/img/RdioBlueLogo.png" alt="rdio.com logo"></a></li>
+				<li style= "float: right;"><em>created by:</em><br/> Team Green</li>
+				<li style= "float: right;"><em>powered by:</em><br/>
+				<a title="rdio.com website" href="hhtp://www.rdio.com"><img height="30" src="/img/RdioBlueLogo.png" alt="rdio.com logo"></a></li>
 				<li class="last"><em>sponsored by:</em><br/> <a title="projectpossibility.org website" href="http://projectpossibility.org"><img height="30" src="/img/pp_logo.png" alt="projectpossibility.org logo"></a></li>
 			</ul>
 		</footer>
