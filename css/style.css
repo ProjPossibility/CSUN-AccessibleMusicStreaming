@@ -1,4 +1,4 @@
-/* 
+﻿/* 
  * HTML5 ✰ Boilerplate
  *
  * What follows is the result of much research on cross-browser styling. 
@@ -32,7 +32,7 @@ audio:not([controls]) { display: none; }
 
 html { font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
 
-body { margin: 0; font-size: 13px; line-height: 1.231; }
+body { margin: 0; font-size: 13px; line-height: 1.231; font-size:16px; }
 
 body, button, input, select, textarea { font-family: sans-serif; color: #222; }
 
@@ -211,17 +211,19 @@ td { vertical-align: top; }
    Author: 
    ========================================================================== */
 /* Logo Style */
-.logo_blue{
+h1.logo_blue{
 	color: blue;
-	font-size: x-large;
+	font-size:3.0em;
+
 }
 
-.logo_red{
+h1 em{
 	color: red;
-	color: xx-large;
-	font-size: 48pt;
-	font-family: arial;
+	font-size:1.9em;
+	line-height:.5em;
+
 }
+
 body{
 	background-image:url('../img/wood_pattern.png');
 	background-attachment: fixed;
@@ -229,6 +231,7 @@ body{
 }
 header {border:1px solid black;padding:10px;}
 footer {border:1px solid black;padding:10px;}
+
 #container{
 /*	background-color: rgba(255, 255, 255, 1.0);	*/
 	background-image: url('../img/wood_pattern_blurred.png');
@@ -241,18 +244,10 @@ footer {border:1px solid black;padding:10px;}
 }
 #main {padding:10px 0px;}
 
-.box_gradient {
-  background-color: #012533;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#012533), to(#054963)); /* Saf4+, Chrome */
-  background-image: -webkit-linear-gradient(top, #012533, #054963); /* Chrome 10+, Saf5.1+, iOS 5+ */
-  background-image:    -moz-linear-gradient(top, #012533, #054963); /* FF3.6 */
-  background-image:     -ms-linear-gradient(top, #012533, #054963); /* IE10 */
-  background-image:      -o-linear-gradient(top, #012533, #054963); /* Opera 11.10+ */
-  background-image:         linear-gradient(to bottom, #012533, #054963);
-}
-
-h2 {font-size:1.1em;padding:5px;margin:0;}
-h2 em {font-size:1.3em;color:red;}
+h1 {font-size:2em;padding:0;margin:0px;}
+h1 em {margin:0;padding:0;}
+h2 {font-size:1.5em;padding:5px;margin:0;}
+h2 em {font-size:1.5em;color:red;}
 
 
 .gradient{
@@ -263,7 +258,7 @@ h2 em {font-size:1.3em;color:red;}
 /*==================== */
 /* Player Style */
 /*==================== */
-
+.
 #volume {
 	width:3em;
 	border-radius: 3px 3px 3px 3px;
@@ -272,14 +267,20 @@ h2 em {font-size:1.3em;color:red;}
 	border: 1px solid grey;
 	text-align: right;
 }
-#volume_control {margin-left:102px;}
+
+#volume_control {
+	padding:10px;
+	background-color:black;
+	margin:2px 0;
+	}
+ui-slider, ui-slider-horizontal {height:4px;}
 
 .radio_player {
 	width:400px;
 	padding:10px;
 	border:1px solid black;
-	background-color: rgb( 5,73,99);
-	background: url('/img/vertical_cloth.png');
+	background-color: rgb( 0,0,0);
+
 	color: rgb(246,249,254);
 }
 
@@ -306,6 +307,115 @@ ol#playlist {}
 
 #album_art img {background-color:black;width:100px;height:100px;}
 
+
+/* BUTTON CSS */
+#page-container {
+	width:640px;
+	overflow:hidden;
+	margin:0 auto;
+	min-height:770px;
+	padding:0 0 20px 0;
+}
+
+#play-backContainer {
+	margin:0 0 0 0;
+	background:rgba(0,0,0,0.84);
+	padding:20px;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	overflow:hidden;
+	height: 60px;
+	width: 270px;
+}
+
+#play-backContainer a {
+	color:#FFF;
+}
+
+.playbackOptions li {
+	float:left;
+	-moz-border-radius:20px 20px 20px 20px;
+	background:none repeat scroll 0 0 #282828;
+	border:2px solid #404040;
+	height:20px;
+	margin:17px;
+	text-align:center;
+	width:20px;
+	-moz-box-shadow: 0px 2px 0 #404040;
+	-webkit-box-shadow: 0px 2px 0 #404040;
+	box-shadow: 0px 2px 0 #404040;
+	list-style:none;
+}
+
+.playbackOptions li:hover {
+	border-color:#404040 #FFFFFF;
+	cursor:pointer;
+}
+
+.playBtn {
+	padding:11px 7px 7px 9px;
+}
+
+.playBtn a{
+	border-color:transparent transparent transparent #FFFFFF;
+	border-style:solid;
+	border-width:8px 0 8px 12px;
+	float:left;
+	height:0;
+	margin:0 1.5em 0 0.4em;
+	text-indent:-9999px;
+	width:0;
+}
+
+.pauseBtn{
+	padding:11px 6px 7px 10px;
+}
+
+.pauseBtn a{
+	border-color:transparent #FFFFFF transparent #FFFFFF;
+	border-style:solid;
+	border-width:0px 4px 0 4px;
+	float:left;
+	height:15px;
+	text-indent:-9999px;
+	width:7px;
+}
+
+.forwardBtn {
+	padding:10px 13px 7px 3px;
+}
+
+.forwardBtn span, .rewindBtn span {
+	width:10px;
+	float:left;
+}
+
+.forwardBtn a{
+	border-color:transparent transparent transparent #FFFFFF;
+	border-style:solid;
+	border-width:8px 0 8px 12px;
+	float:left;
+	height:0;
+	margin:0 1.5em 0 0.4em;
+	text-indent:-9999px;
+	width:0;
+}
+
+.rewindBtn {
+	padding:10px 16px 7px 0;
+}
+
+.rewindBtn a{
+	border-color:transparent #FFFFFF transparent transparent;
+	border-style:solid;
+	border-width:8px 12px 8px 0;
+	float:left;
+	height:0;
+	margin:0 1.5em 0 0.4em;
+	text-indent:-9999px;
+	width:0;
+}
 
 
 
@@ -373,3 +483,4 @@ ol#playlist {}
   p, h2, h3 { orphans: 3; widows: 3; }
   h2, h3 { page-break-after: avoid; }
 }
+
