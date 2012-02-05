@@ -10,6 +10,8 @@ rAdio is an accessible web-based music application that has multiple accessible 
 rAdio utilizes JQuery, JavaScript, and the RDIO API. [RDIO API](http://developer.rdio.com/docs/read/Web_Playback_API) The Rdio player API allows rAdio to incorporate the playback of licensed Rdio music.  Rdio provides a jQuery library which simplifies embedding and interacting with the Web Playback SWF. JavaScript handles all of the events on the player.
 
 ##### HOW DOES THE PLAYBACK NAVAGATION WORK? #####
+
+##### WHAT CHANGES WERE MADE TO THE RDIO PLAYER #####
   
  
 ##### HOW DO THE SHORTCUT KEYS WORK? #####
