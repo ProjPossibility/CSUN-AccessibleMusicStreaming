@@ -1,4 +1,4 @@
-/* 
+﻿/* 
  * HTML5 ✰ Boilerplate
  *
  * What follows is the result of much research on cross-browser styling. 
@@ -222,7 +222,7 @@ td { vertical-align: top; }
 	font-size: 48pt;
 	font-family: arial;
 }
-body {background-image:url('/img/perforated_white_leather.png');}
+body {background-image:url('../img/perforated_white_leather.png');}
 header {border:1px solid black;padding:10px;}
 footer {border:1px solid black;padding:10px;}
 #container{padding:10px;}
@@ -260,7 +260,7 @@ h2 em {font-size:1.3em;color:red;}
 	padding:10px;
 	border:1px solid black;
 	background-color: rgb( 5,73,99);
-	background: url('/img/vertical_cloth.png');
+	background: url('../img/vertical_cloth.png');
 	color: rgb(246,249,254);
 }
 
@@ -353,4 +353,295 @@ ol#playlist {}
   @page { margin: 0.5cm; }
   p, h2, h3 { orphans: 3; widows: 3; }
   h2, h3 { page-break-after: avoid; }
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+
+/* remember to highlight inserts somehow! */
+ins {
+	text-decoration: none;
+}
+del {
+	text-decoration: line-through;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.left {
+	float:left;	
+}
+
+.right {
+	float:right;
+}
+
+.clear {
+	clear:both
+}
+
+header, footer, article, section, nav, menu, hgroup {  
+	display: block;  
+}
+
+a {
+	color: #111111;
+	text-decoration:none;
+}
+
+a:hover {
+	text-decoration:none;
+}
+
+a:active {
+	position:relative;
+	top: 2px;
+}
+
+a.mm {
+	position:fixed;
+	bottom:10px;
+	right:10px;
+	background:url(../images/MediaMilan-White.png) left top no-repeat;
+	width:30px;
+	height:30px;
+	display:block;
+}
+
+/* -------------- END CSS RESET -------------- */
+
+body {
+	color:#000;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:14px;
+}
+
+@font-face {
+	font-family: Bebas;
+	src: url('BEBAS.TTF');
+}
+
+.heading {
+	margin:20px 0 0 150px;
+}
+
+.heading h1 {
+	font:normal 30px/45px Bebas, Arial;
+	color:#1F1F1F;
+	text-shadow:1px 1px 0 #F8f8f8;
+	word-spacing:6px;
+}
+
+.heading p {
+	margin:10px 0 0 0;
+}
+
+#page-container {
+	width:640px;
+	overflow:hidden;
+	margin:0 auto;
+	min-height:770px;
+	padding:0 0 20px 0;
+}
+
+img.bg {
+        /* Set rules to fill background */
+        min-height: 100%;
+        min-width: 1024px;
+
+        /* Set up proportionate scaling */
+        width: 100%;
+        height: auto;
+
+        /* Set up positioning */
+        position: fixed;
+        top: -200px;
+        left: 0;
+		z-index:-1;
+}
+
+@media screen and (max-width: 1024px) { /* Specific to this particular image */
+        img.bg {
+                left: 50%;
+                margin-left: -512px;   /* 50% */
+        }
+}
+
+#play-backContainer {
+	margin:0 0 0 0;
+	background:rgba(0,0,0,0.84);
+	padding:20px;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	overflow:hidden;
+	height: 60px;
+	width: 240px;
+}
+
+#play-backContainer a {
+	color:#FFF;
+}
+
+.playbackOptions li {
+	float:left;
+	-moz-border-radius:20px 20px 20px 20px;
+	background:none repeat scroll 0 0 #282828;
+	border:2px solid #404040;
+	height:20px;
+	margin:17px;
+	text-align:center;
+	width:20px;
+	-moz-box-shadow: 0px 2px 0 #404040;
+	-webkit-box-shadow: 0px 2px 0 #404040;
+	box-shadow: 0px 2px 0 #404040;
+}
+
+.playbackOptions li:hover {
+	border-color:#404040 #FFFFFF;
+	cursor:pointer;
+}
+
+.playBtn {
+	padding:11px 7px 7px 9px;
+}
+
+.playBtn a{
+	border-color:transparent transparent transparent #FFFFFF;
+	border-style:solid;
+	border-width:8px 0 8px 12px;
+	float:left;
+	height:0;
+	margin:0 1.5em 0 0.4em;
+	text-indent:-9999px;
+	width:0;
+}
+
+.pauseBtn{
+	padding:11px 6px 7px 10px;
+}
+
+.pauseBtn a{
+	border-color:transparent #FFFFFF transparent #FFFFFF;
+	border-style:solid;
+	border-width:0px 4px 0 4px;
+	float:left;
+	height:15px;
+	text-indent:-9999px;
+	width:7px;
+}
+
+.stopBtn {
+	padding:12px 11px 6px 5px;
+}
+
+.stopBtn a{
+	border-color:#FFFFFF;
+	border-style:solid;
+	border-width:7px;
+	float:left;
+	height:0;
+	margin:0 1.5em 0 0.4em;
+	text-indent:-9999px;
+	width:0;
+}
+
+.forwardBtn {
+	padding:10px 13px 7px 3px;
+}
+
+.forwardBtn span, .rewindBtn span {
+	width:10px;
+	float:left;
+}
+
+.forwardBtn a{
+	border-color:transparent transparent transparent #FFFFFF;
+	border-style:solid;
+	border-width:8px 0 8px 12px;
+	float:left;
+	height:0;
+	margin:0 1.5em 0 0.4em;
+	text-indent:-9999px;
+	width:0;
+}
+
+.rewindBtn {
+	padding:10px 16px 7px 0;
+}
+
+.rewindBtn a{
+	border-color:transparent #FFFFFF transparent transparent;
+	border-style:solid;
+	border-width:8px 12px 8px 0;
+	float:left;
+	height:0;
+	margin:0 1.5em 0 0.4em;
+	text-indent:-9999px;
+	width:0;
+}
+
+.ejectBtn {
+	padding:7px 12px 9px 4px;
+}
+
+
+.ejectBtn a.arrow{
+	border-color:transparent transparent #FFFFFF transparent;
+	border-style:solid;
+	border-width:0px 8px 12px 8px;
+	float:left;
+	height:0;
+	margin:0 1.5em 0 0.4em;
+	text-indent:-9999px;
+	width:0;
+}
+
+.ejectBtn a.dash{
+	border-color:transparent transparent #FFFFFF transparent;
+	border-style:solid;
+	border-width:0px 0 4px 0;
+	float:left;
+	height:3px;
+	margin:0 1.5em 0 0.4em;
+	text-indent:-9999px;
+	width:16px;
 }
