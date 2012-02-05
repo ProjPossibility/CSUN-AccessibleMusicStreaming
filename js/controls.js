@@ -20,6 +20,13 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
  */
 
+//constants
+var MIN_VOLUME = 0;
+var MAX_VOLUME = 10;
+var VOLUME_STEP = 1;
+var DEFAULT_VOLUME = 5;
+
+
 // a global variable that will hold a reference to the api swf once it has loaded
 var apiswf = null;
 var myPlayState = null;	//0 - paused, 1 - playing, 2 - stopped, 3 - buffering or 4 - paused.
@@ -41,36 +48,27 @@ $(document).ready(function() {
 
 
 	// set up the controls
-	$('#playPause').click(function() {
-		if(myPlayState == null){	//play for the first time
-			apiswf.rdio_play($('#play_key').val());
-			$('#playPause').text("Pause");
-		}
-		else if(myPlayState == 0 || myPlayState ==4){	//resume from pause
-			apiswf.rdio_play();
-			$('#playPause').text("Pause");
-		}
-		else{	//pause
-			apiswf.rdio_pause();
-			$('#playPause').text("Play");
-		}
-	});
-	$('#previous').click(function() { apiswf.rdio_previous(); });
-	$('#next').click(function() { apiswf.rdio_next(); });
+	$('#playPause').click(playPause);
+	$('#previous').click(previous);
+	$('#next').click(next);
+	shortcut.add('p', playPause)
+	shortcut.add('left', previous);
+	shortcut.add('right', next);
+	shortcut.add('up', function(){volumeUp(); return false;});
+	shortcut.add('down', function(){volumeDown(); return false;});
+	//set up slider
+	
 	$(function() {
-			$( "#slider-range-min" ).slider({
-				range: "min",
-				value: 37,
-				min: 0,
-				max: 100,
-				slide: function( event, ui ) {
-					$( "#volume" ).val( ui.value );
-					apiswf.rdio_setVolume($( "#slider-range-min" ).slider( "value" )/100);
-					console.log($( "#slider-range-min" ).slider( "value" )/100);
-				}
-			});
-			$( "#volume" ).val( $( "#slider-range-min" ).slider( "value" ) );
+		$( "#slider-range-min" ).slider({
+			range: "min",
+			value: DEFAULT_VOLUME,
+			min: MIN_VOLUME,
+			max: MAX_VOLUME,
+			step: VOLUME_STEP,
+			slide: volumeSlide,
 		});
+		$( "#volume" ).val( $( "#slider-range-min" ).slider( "value" ) );
+	});
 });
 
 // the global callback object
@@ -89,14 +87,61 @@ callback_object.playStateChanged = function playStateChanged(playState) {
 }
 
 
+/*************************
+	Control Functions
+*************************/
+function previous(){
+	apiswf.rdio_previous();
+}
+
+function next(){
+	apiswf.rdio_next();
+}
+
+function playPause(){
+	if(myPlayState == null){	//play for the first time
+		apiswf.rdio_play($('#play_key').val());
+		$('#playPause').text("Pause");
+	}
+	else if(myPlayState == 0 || myPlayState ==4){	//resume from pause
+		apiswf.rdio_play();
+		$('#playPause').text("Pause");
+	}
+	else{	//pause
+		apiswf.rdio_pause();
+		$('#playPause').text("Play");
+	}
+}
+
+function volumeUp(){
+	var volume = $('#slider-range-min').slider("value");
+	if(volume >= MAX_VOLUME - VOLUME_STEP){
+		$('#slider-range-min').slider("value", MAX_VOLUME);
+	}else{
+		$('#slider-range-min').slider("value", volume+VOLUME_STEP);
+	}
+	volumeSlide();
+}
+
+function volumeDown(){
+	var volume = $('#slider-range-min').slider("value");
+	if(volume <= MIN_VOLUME + VOLUME_STEP){
+		$('#slider-range-min').slider("value", MIN_VOLUME);
+	}else{
+		$('#slider-range-min').slider("value", volume-VOLUME_STEP);
+	}
+	volumeSlide();
+}
+
+function volumeSlide(){
+	$( "#volume" ).val($( "#slider-range-min" ).slider( "value" ));
+	apiswf.rdio_setVolume($( "#slider-range-min" ).slider( "value" )/(MAX_VOLUME-MIN_VOLUME));
+}
 
 
-
-
-
-
-//Handy callbacks I don't want to delete
-
+/***************************************
+Handy callbacks I don't want to delete
+***************************************/
 callback_object.freeRemainingChanged = function freeRemainingChanged(remaining) {
 	$('#remaining').text(remaining);
 }
