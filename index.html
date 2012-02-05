@@ -82,7 +82,6 @@
 					<div id="songProgress"></div>	<!-- REPLACED WITH SEEK BAR	-->
 					<div id= "playerTime"></div>	<!-- REPLACED WITH TEXT SHOWING TRACK POSITION -->
 					<hr>
-	
 
 					<div id="play-backContainer" class="box_round">
 						<div class="clearfix" id="inner_container">
@@ -90,10 +89,10 @@
 								<div id="player_image_container">
 									<div class="clearfix" id="playerNowPlayingContainer">
 						        		<div class="clearfix">
-						          			<button tabindex="7" class="" title="play previous song" id="previous"></button>
-						          			<button tabindex="8" class="" title="play song" id="playPause"></button>
-						          			<button tabindex="9" class="" id="pauseButton" title="pause song"></button>
-						          			<button tabindex="10" class="" id="next" title="play next song"></button>
+						          			<button class="" title="play previous song" id="previous"></button>
+						          			<button class="" title="play song" id="playPause"></button>
+						          			<button class="" title="pause song" id="pauseButton"></button>
+						          			<button class="" id="next" title="play next song"></button>
 										</div>
 						      		</div> <!-- end #playerNowPlayingContainer-->
 								</div>
@@ -137,22 +136,6 @@
 	  <script src="js/controls.js"></script>
 	  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
 	  <script src="js/shortcuts.js"></script>
-
-
-	<script>/*
-		$(function() {
-			$( "#slider-range-min" ).slider({
-				range: "min",
-				value: 37,
-				min: 1,
-				max: 100,
-				slide: function( event, ui ) {
-					$( "#volume" ).val( ui.value );
-				}
-			});
-			$( "#volume" ).val( $( "#slider-range-min" ).slider( "value" ) );
-		});*/
-		</script>
 
 
 	  <!-- scripts concatenated and minified via ant build script-->
