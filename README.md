@@ -8,6 +8,7 @@ rAdio is an accessible web-based music application that has multiple accessible 
 ##### INSTRUCTIONS #####
 
 Shortcut Keys:
+
 	* space : play/pause
 	* left : previous track
 	* right : next track
