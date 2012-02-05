@@ -29,6 +29,7 @@ var DEFAULT_VOLUME = 5;
 var songDuration = 0;
 var SEEK_STEP_SIZE = 10;			//seek 20 seconds at a time
 
+
 // a global variable that will hold a reference to the api swf once it has loaded
 var apiswf = null;
 var myPlayState = null;	//0 - paused, 1 - playing, 2 - stopped, 3 - buffering or 4 - paused.
@@ -52,7 +53,7 @@ $(document).ready(function() {
 	$('#playPause').click(playPause);
 	$('#previous').click(previous);
 	$('#next').click(next);
-	shortcut.add('p', playPause)
+	shortcut.add('space', playPause)
 	shortcut.add('left', previous);
 	shortcut.add('right', next);
 	shortcut.add('up', function(){volumeUp(); return false;});
@@ -68,6 +69,7 @@ $(document).ready(function() {
 			min: MIN_VOLUME,
 			max: MAX_VOLUME,
 			step: VOLUME_STEP,
+			animate: true,
 			slide: volumeSlide,
 		});
 		$( "#volume" ).val( $( "#slider-range-min" ).slider( "value" ) );
@@ -80,6 +82,7 @@ $(document).ready(function() {
 			min: 0,
 			max: songDuration,
 			step: VOLUME_STEP,
+			animate: true,
 			slide: function(event, ui){apiswf.rdio_seek(ui.value); console.log(ui.value);},
 		});
 		$( "#songProgress" ).attr("aria-live", "off");
@@ -175,14 +178,18 @@ function seekBackward(){
 	}
 }
 
+function parseTimeFromSeconds(seconds){
+	return pad2(Math.floor(seconds/60)) + ":" + pad2(Math.floor(seconds%60));
+}
+
+function pad2(number) {
+	return (number < 10 ? '0' : '') + number
+}
+
 
 /***************************************
 Callback Functions
 ***************************************/
-callback_object.freeRemainingChanged = function freeRemainingChanged(remaining) {
-	$('#remaining').text(remaining);
-}
-
 callback_object.playingTrackChanged = function playingTrackChanged(playingTrack, sourcePosition) {
 	// Track metadata is provided as playingTrack and the position within the playing source as sourcePosition.
 	if(playingTrack != null){
@@ -204,6 +211,7 @@ callback_object.positionChanged = function positionChanged(position) {
 	//The position within the track changed to position seconds.
 	// This happens both in response to a seek and during playback.
 	$( "#songProgress" ).slider("option", "value", Math.floor(position));
+	$( "#playerTime" ).text(parseTimeFromSeconds(position) + "/" + parseTimeFromSeconds(songDuration));
 }
 
 callback_object.playingSourceChanged = function playingSourceChanged(playingSource) {
