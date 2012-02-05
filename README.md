@@ -7,7 +7,7 @@ rAdio is an accessible web-based music application that has multiple accessible 
 
 ##### WHAT TECHNOLOGIES DOES rAdio UTILIZE? #####
 
-rAdio utilizes JQuery, JavaScript, and the RDIO API. RDIO API <http://developer.rdio.com/docs/read/Web_Playback_API> The Rdio player API allows rAdio to incorporate the playback of licensed Rdio music.  Rdio provides a jQuery library which simplifies embedding and interacting with the Web Playback SWF. JavaScript handles all of the events on the player.
+rAdio utilizes JQuery, JavaScript, and the RDIO API. [RDIO API](http://developer.rdio.com/docs/read/Web_Playback_API) The Rdio player API allows rAdio to incorporate the playback of licensed Rdio music.  Rdio provides a jQuery library which simplifies embedding and interacting with the Web Playback SWF. JavaScript handles all of the events on the player.
 
 ##### HOW DOES THE PLAYBACK NAVAGATION WORK? #####
   
@@ -24,7 +24,7 @@ JavaScript recognizes which key was pressed. Each shortcut key is then associate
  
 ##### CONTACT INFO #####
 
-Please visit <http://projectpossibility.org/>.
+Please visit [Project Possibility](http://projectpossibility.org/).
   
   
   
