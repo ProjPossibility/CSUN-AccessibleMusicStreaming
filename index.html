@@ -81,19 +81,24 @@
 					<div id="songProgress"></div>	<!-- REPLACED WITH SEEK BAR	-->
 					<div id= "playerTime"></div>	<!-- REPLACED WITH TEXT SHOWING TRACK POSITION -->
 					<hr>
-					<div id="play-backContainer" class= "box_round">
-						<ul id="playbackOptions">
-							<li class="rewindBtn">
-								<span><a id="previous" href="#" title="Rewind">Rewind</a></span>
-								<span><a id="previous2" href="#" title="Rewind">Rewind</a></span>
-							</li>								
-							<li class="playBtn"><a id="playPause" href="#" title="Play">Play</a></li>
-							<!-- <li class="pauseBtn"><a href="#" title="Pause">Pause</a></li> -->															
-							<li class="forwardBtn">
-								<span><a id="next" href="#" title="Forward">Forward</a></span>
-								<span><a id="next2" href="#" title="Forward">Forward</a></span>
-							</li>
-						</ul>
+					<div id="play-backContainer" class="box_round">
+						
+						<div class="clearfix" id="inner_container">
+							<div id="player_container">
+								<div id="player_image_container">
+									<div class="clearfix" id="playerNowPlayingContainer">
+						        		<div class="clearfix">
+						          			<button class="" id="previous"></button>
+						          			<button class="" id="playPause"></button>
+						          			<button id="pauseButton"></button>
+						          			<button class="" id="next" title="Particle Man"></button>
+										</div>
+						      		</div> <!-- end #playerNowPlayingContainer-->
+								</div>
+							</div>
+						 </div> 
+					</div> <!-- end #play-backContainer -->
+					
 						<div id= "volumeControlContainer">
 							<div id="slider-range-min"></div>
 						</div>
