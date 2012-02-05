@@ -32,7 +32,7 @@ audio:not([controls]) { display: none; }
 
 html { font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
 
-body { margin: 0; font-size: 13px; line-height: 1.231; font-size:16px; }
+body { margin: 0; font-size: 13px; line-height: 1.231; font-size:22px; }
 
 body, button, input, select, textarea { font-family: sans-serif; color: #222; }
 
@@ -280,6 +280,55 @@ hr{
 	margin: 10px auto 5px auto;
 	width: 90%;
 }
+/*==================== */
+/* Shortcut styles */
+/*==================== */
+#shortcut_keys {
+	border-left:1px? solid black;
+	border-right:1px solid black;
+	border-top:1px solid black;
+	width:500px;
+	background:#f1f2f4;
+}
+
+#shortcut_keys h2 {
+	border-bottom:1px solid black;
+	background-color:rgb(56,31,0);
+	color:white;
+	margin:0px;
+	font-variant:small-caps
+}
+#shortcut_keys h3 {
+	border-bottom:1px solid black;
+	background-color:rgb(56,31,0);
+	font-size:.7em;
+	color:white;
+	margin:0;
+	padding:5px;
+	font-variant:small-caps;
+}
+#shortcut_keys dl {
+	margin:0;
+	padding:0;
+}
+#shortcut_keys dt {
+	font-weight:bold;
+	display:block;
+	font-size:1.2em;
+	padding-left:8px;
+	font-variant:small-caps;
+	
+}
+#shortcut_keys dd {
+	margin:0;
+	padding:0;
+	border-bottom:1px solid black;
+	font-size:.8em;
+	padding-left:8px;
+	font-variant:small-caps;
+	
+}
+
 
 /*==================== */
 /* Player Style */
@@ -304,7 +353,7 @@ ui-slider, ui-slider-horizontal {
 }
 
 #radio_player {
-	width:400px;
+	width:550px;
 	padding:8px;
 	background-color: #F1F2F4;
 	border: 1px solid #a1a2a4;
@@ -320,7 +369,7 @@ footer ul li {
 	float:left;
 	margin:0;
 	padding:0 5px;	
-	font-size:.8em;
+	font-size:.7em;
 	border-right:1px solid black;
 
 }
