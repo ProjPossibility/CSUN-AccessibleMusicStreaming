@@ -315,6 +315,7 @@ hr{
 	padding:5px;
 	font-variant:small-caps;
 }
+/*
 #shortcut_keys dl {
 	margin:0;
 	padding:0;
@@ -335,6 +336,21 @@ hr{
 	padding-left:8px;
 	font-variant:small-caps;
 	
+} */
+ul#shortcut_keys {margin:0;padding:0;}
+
+#shortcut_keys li {
+	list-style:none;
+	border-bottom:1px solid black;
+	margin:0;
+	padding:0;
+	font-variant:small-caps;
+}
+#shortcut_keys li.shortcut {
+	font-size:1.2em;
+	font-weight:bold;
+	border:none;
+	margin-top:8px;
 }
 
 
