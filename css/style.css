@@ -291,6 +291,7 @@ h2 em {
 	background-color:rgb(56,31,0);
 	color:white;
 	margin:0px;
+	font-variant:small-caps
 }
 #shortcut_keys h3 {
 	border-bottom:1px solid black;
@@ -299,6 +300,7 @@ h2 em {
 	color:white;
 	margin:0;
 	padding:5px;
+	font-variant:small-caps;
 }
 #shortcut_keys dl {
 	margin:0;
@@ -309,6 +311,7 @@ h2 em {
 	display:block;
 	font-size:1.2em;
 	padding-left:8px;
+	font-variant:small-caps;
 	
 }
 #shortcut_keys dd {
@@ -317,6 +320,8 @@ h2 em {
 	border-bottom:1px solid black;
 	font-size:.8em;
 	padding-left:8px;
+	font-variant:small-caps;
+	
 }
 
 
