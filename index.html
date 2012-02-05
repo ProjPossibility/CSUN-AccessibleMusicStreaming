@@ -29,8 +29,9 @@
 	  <script src="js/libs/modernizr-2.0.6.min.js"></script>
 	</head>
 
-	<body>
-	<div id="container">
+	<body role="application">
+
+	  <div id="container">
 		<header>
 			<h1 class="logo_thick">r<em>a</em>dio</h1>
 		</header>
@@ -78,19 +79,24 @@
 					<div id="songProgress"></div>	<!-- REPLACED WITH SEEK BAR	-->
 					<div id= "playerTime"></div>	<!-- REPLACED WITH TEXT SHOWING TRACK POSITION -->
 					<hr>
-					<div id="play-backContainer" class= "box_round">
-						<ul id="playbackOptions">
-							<li class="rewindBtn">
-								<span><a id="previous" href="#" title="Rewind">Rewind</a></span>
-								<span><a id="previous" href="#" title="Rewind">Rewind</a></span>
-							</li>								
-							<li class="playBtn"><a id="playPause" href="#" title="Play">Play</a></li>
-							<!-- <li class="pauseBtn"><a href="#" title="Pause">Pause</a></li> -->															
-							<li class="forwardBtn">
-								<span><a id="next" href="#" title="Forward">Forward</a></span>
-								<span><a id="next" href="#" title="Forward">Forward</a></span>
-							</li>
-						</ul>
+					<div id="play-backContainer" class="box_round">
+						
+						<div class="clearfix" id="inner_container">
+							<div id="player_container">
+								<div id="player_image_container">
+									<div class="clearfix" id="playerNowPlayingContainer">
+						        		<div class="clearfix">
+						          			<button class="" id="previous"></button>
+						          			<button class="" id="playPause"></button>
+						          			<button id="pauseButton"></button>
+						          			<button class="" id="next" title="Particle Man"></button>
+										</div>
+						      		</div> <!-- end #playerNowPlayingContainer-->
+								</div>
+							</div>
+						 </div> 
+					</div> <!-- end #play-backContainer -->
+					
 						<div id= "volumeControlContainer">
 							<div id="slider-range-min"></div>
 						</div>
@@ -100,29 +106,17 @@
 							<label for="volume">Volume: </label>
 							<input type="text" id="volume" style="border:0; color:#f6931f; font-weight:bold;" />
 						</div>
-<!--						<section class="clearfix">
-							<div id="volume_control"><div id="slider-range-min"></div></div>
-						</section>	-->
 					</section>
-
-	<!--				<section id="playlistSection" class="clearfix">
-						<div class="box_gradient">Playlist</div>
-						<ol id="playlist">
-							<li>Song One</li>
-							<li>Song Two</li>
-							<li>Song Three</li>
-						</ol>
-
-					</section>
-	-->				
+								
 			</article>
 		</div>
 		<footer class="clearfix">
-			<ul>
+			<ul id= "poweredBy">
 				<li class="first">&copy; 2012 by TeamGreen</li>
-				<li><em>created by:</em><br/> Team Green</li>
-				<li><em>powered by:</em><br/> rdio</li>
-				<li class="last"><em>sponsored by:</em><br/> Project Possibility</li>
+				<li style= "float: right;"><em>created by:</em><br/> Team Green</li>
+				<li style= "float: right;"><em>powered by:</em><br/>
+				<a title="rdio.com website" href="hhtp://www.rdio.com"><img height="30" src="/img/RdioBlueLogo.png" alt="rdio.com logo"></a></li>
+				<li class="last"><em>sponsored by:</em><br/> <a title="projectpossibility.org website" href="http://projectpossibility.org"><img height="30" src="/img/pp_logo.png" alt="projectpossibility.org logo"></a></li>
 			</ul>
 		</footer>
 	  </div> <!--! end of #container -->
