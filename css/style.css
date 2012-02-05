@@ -227,7 +227,13 @@ header {border:1px solid black;padding:10px;}
 footer {border:1px solid black;padding:10px;}
 #container{padding:10px;}
 #main {padding:10px 0px;}
-#volume {width:19px;}
+#volume {
+	width:3em;
+	border-radius: 3px 3px 3px 3px;
+	background-color: rgba(255, 255, 255, 0.5);
+	border: 1px solid grey;
+	text-align: right;
+}
 
 
 .radio_player {

@@ -57,6 +57,20 @@ $(document).ready(function() {
 	});
 	$('#previous').click(function() { apiswf.rdio_previous(); });
 	$('#next').click(function() { apiswf.rdio_next(); });
+	$(function() {
+			$( "#slider-range-min" ).slider({
+				range: "min",
+				value: 37,
+				min: 0,
+				max: 100,
+				slide: function( event, ui ) {
+					$( "#volume" ).val( ui.value );
+					apiswf.rdio_setVolume($( "#slider-range-min" ).slider( "value" )/100);
+					console.log($( "#slider-range-min" ).slider( "value" )/100);
+				}
+			});
+			$( "#volume" ).val( $( "#slider-range-min" ).slider( "value" ) );
+		});
 });
 
 // the global callback object
