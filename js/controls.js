@@ -48,7 +48,6 @@ $(document).ready(function() {
       'apiswf', // the ID of the element that will be replaced with the SWF
       1, 1, '9.0.0', 'expressInstall.swf', flashvars, params, attributes);
 
-
 	// set up the controls
 	$('#playPause').click(playPause);
 	$('#previous').click(previous);
@@ -59,7 +58,7 @@ $(document).ready(function() {
 	shortcut.add('up', function(){volumeUp(); return false;});
 	shortcut.add('down', function(){volumeDown(); return false;});
 	shortcut.add('f', seekForward);
-	shortcut.add('b', seekBackward);
+	shortcut.add('d', seekBackward);
 
 	//set up volume slider
 	$(function() {
@@ -73,6 +72,7 @@ $(document).ready(function() {
 		});
 		$( "#volume" ).val( $( "#slider-range-min" ).slider( "value" ) );
 	});
+	//set up track progress bar
 	$(function() {
 		$( "#songProgress" ).slider({
 			range: "min",
@@ -82,6 +82,7 @@ $(document).ready(function() {
 			step: VOLUME_STEP,
 			slide: function(event, ui){apiswf.rdio_seek(ui.value); console.log(ui.value);},
 		});
+		$( "#songProgress" ).attr("aria-live", "off");
 	});
 });
 
@@ -189,6 +190,14 @@ callback_object.playingTrackChanged = function playingTrackChanged(playingTrack,
 	}
 	//set up progress indicator
 	$( "#songProgress" ).slider("option", "max", songDuration);
+	
+	//Update album info (merged with John-Luke's displayInfo.js)
+	if (playingTrack != null) {
+		$('#song_title').text(playingTrack['name']);
+		$('#album').text(playingTrack['album']);
+		$('#artist').text(playingTrack['artist']);
+		$('#album_art').attr('src', playingTrack['icon']);
+	}
 }
 
 callback_object.positionChanged = function positionChanged(position) {
