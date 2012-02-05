@@ -30,13 +30,13 @@ JavaScript recognizes which key was pressed. Each shortcut key is then associate
 
 ##### LIST OF AUTHORS: #####
   
-  1. A
-  2. B
-  3. C
+  1. Kevork Sepetci
+  2. Luis Fuentes
+  3. Ursula Messick
   4. John-Luke Laue
 
   
-Mentor: Mike
+Mentor: Mike Matuzak
  
 ##### CONTACT INFO #####
 
