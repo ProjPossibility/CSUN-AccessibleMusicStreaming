@@ -348,6 +348,32 @@ ol#playlist {}
 }
 
 /*==================== */
+/* FOOTER CSS */
+/*==================== */
+footer ul {list-style:none;margin:0;padding:0;}
+footer ul li {
+	list-style:none;
+	float:left;
+	margin:0;
+	padding:0 5px;	
+	font-size:.8em;
+	border-right:1px solid black;
+
+}
+
+footer ul li.first {
+	padding-top:10px;
+	padding-right:460px;
+
+}
+footer ul li.last {
+	border:none;
+}
+
+footer ul li em {font-weight:bold;}
+
+
+/*==================== */
 /* BUTTON CSS */
 /*==================== */
 #page-container {
@@ -457,6 +483,7 @@ ol#playlist {}
 	text-indent:-9999px;
 	width:0;
 }
+
 
 
 
