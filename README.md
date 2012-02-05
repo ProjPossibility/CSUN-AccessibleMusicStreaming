@@ -7,8 +7,7 @@ rAdio is an accessible web-based music application that has multiple accessible 
 
 ##### INSTRUCTIONS #####
 
-Shortcut Keys
-	
+Shortcut Keys:
 	* space : play/pause
 	* left : previous track
 	* right : next track
@@ -34,8 +33,9 @@ JavaScript recognizes which key was pressed. Each shortcut key is then associate
   2. B
   3. C
   4. John-Luke Laue
+
   
-  * Mentor: Mike
+Mentor: Mike
  
 ##### CONTACT INFO #####
 
