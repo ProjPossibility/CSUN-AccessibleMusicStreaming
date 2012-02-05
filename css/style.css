@@ -375,8 +375,8 @@ footer ul li {
 }
 
 footer ul li.first {
-	padding-top:10px;
-	padding-right:460px;
+	padding:15px 0;
+	padding-right:290px;
 
 }
 footer ul li.last {
