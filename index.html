@@ -16,9 +16,9 @@
 	  <meta name="viewport" content="width=device-width,initial-scale=1">
 
 	  <!-- CSS: implied media=all -->
-	  <link rel="stylesheet" href="css/style.css">
 	  <link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.8.17.custom.css">
 	  <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+	  <link rel="stylesheet" href="css/style.css">
 
 	  <style type="text/css">
 	    #slider { margin: 10px; }
@@ -43,7 +43,7 @@
 					<h3 tabindex="2">You may use the following commands on your keyboard to access shortcuts for this player</h3>
 					
 					<ul id="shortcuts" role="list" tabindex="3">
-						<li role="listitem" class="shortcut">?</li>
+						<li role="listitem" class="shortcut">&#63;</li>
 						<li role="listitem">shortcut key listing - this menu</li>
 						
 						<li role="listitem" class="shortcut">spacebar</li>
@@ -98,20 +98,12 @@
 								</div>
 							</div>
 						 </div> 
+								<div id="volumeControlContainer">
+									<div id="slider-range-min"></div>
+								</div>
 					</div> <!-- end #play-backContainer -->
 					</section>
-					<section>
-					
-						<div id= "volumeControlContainer">
-							<div id="slider-range-min"></div>
-						</div>
-			
-						
-						<div class= "visuallyhidden focusable">
-							<label for="volume">Volume: </label>
-							<input type="text" id="volume" style="border:0; color:#f6931f; font-weight:bold;" />
-						</div>
-					</section>
+				
 								
 			</article>
 		</div>
