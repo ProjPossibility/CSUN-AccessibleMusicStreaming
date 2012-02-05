@@ -20,6 +20,15 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
  */
 
+//Constants
+var MIN_VOLUME = 0;
+var MAX_VOLUME = 10;
+var VOLUME_STEP = 1;
+var DEFAULT_VOLUME = 5;
+
+var songDuration = 0;
+var SEEK_STEP_SIZE = 10;			//seek 20 seconds at a time
+
 // a global variable that will hold a reference to the api swf once it has loaded
 var apiswf = null;
 var myPlayState = null;	//0 - paused, 1 - playing, 2 - stopped, 3 - buffering or 4 - paused.
@@ -41,36 +50,39 @@ $(document).ready(function() {
 
 
 	// set up the controls
-	$('#playPause').click(function() {
-		if(myPlayState == null){	//play for the first time
-			apiswf.rdio_play($('#play_key').val());
-			$('#playPause').text("Pause");
-		}
-		else if(myPlayState == 0 || myPlayState ==4){	//resume from pause
-			apiswf.rdio_play();
-			$('#playPause').text("Pause");
-		}
-		else{	//pause
-			apiswf.rdio_pause();
-			$('#playPause').text("Play");
-		}
-	});
-	$('#previous').click(function() { apiswf.rdio_previous(); });
-	$('#next').click(function() { apiswf.rdio_next(); });
+	$('#playPause').click(playPause);
+	$('#previous').click(previous);
+	$('#next').click(next);
+	shortcut.add('p', playPause)
+	shortcut.add('left', previous);
+	shortcut.add('right', next);
+	shortcut.add('up', function(){volumeUp(); return false;});
+	shortcut.add('down', function(){volumeDown(); return false;});
+	shortcut.add('f', seekForward);
+	shortcut.add('b', seekBackward);
+
+	//set up volume slider
 	$(function() {
-			$( "#slider-range-min" ).slider({
-				range: "min",
-				value: 37,
-				min: 0,
-				max: 100,
-				slide: function( event, ui ) {
-					$( "#volume" ).val( ui.value );
-					apiswf.rdio_setVolume($( "#slider-range-min" ).slider( "value" )/100);
-					console.log($( "#slider-range-min" ).slider( "value" )/100);
-				}
-			});
-			$( "#volume" ).val( $( "#slider-range-min" ).slider( "value" ) );
+		$( "#slider-range-min" ).slider({
+			range: "min",
+			value: DEFAULT_VOLUME,
+			min: MIN_VOLUME,
+			max: MAX_VOLUME,
+			step: VOLUME_STEP,
+			slide: volumeSlide,
 		});
+		$( "#volume" ).val( $( "#slider-range-min" ).slider( "value" ) );
+	});
+	$(function() {
+		$( "#songProgress" ).slider({
+			range: "min",
+			value: DEFAULT_VOLUME,
+			min: 0,
+			max: songDuration,
+			step: VOLUME_STEP,
+			slide: function(event, ui){apiswf.rdio_seek(ui.value); console.log(ui.value);},
+		});
+	});
 });
 
 // the global callback object
@@ -89,27 +101,100 @@ callback_object.playStateChanged = function playStateChanged(playState) {
 }
 
 
+/*************************
+	Control Functions
+*************************/
+function previous(){
+	apiswf.rdio_previous();
+}
+
+function next(){
+	apiswf.rdio_next();
+}
+
+function playPause(){
+	if(myPlayState == null){	//play for the first time
+		apiswf.rdio_play($('#play_key').val());
+		$('#playPause').text("Pause");
+	}
+	else if(myPlayState == 0 || myPlayState ==4){	//resume from pause
+		apiswf.rdio_play();
+		$('#playPause').text("Pause");
+	}
+	else{	//pause
+		apiswf.rdio_pause();
+		$('#playPause').text("Play");
+	}
+}
+
+function volumeUp(){
+	var volume = $('#slider-range-min').slider("value");
+	if(volume >= MAX_VOLUME - VOLUME_STEP){
+		$('#slider-range-min').slider("value", MAX_VOLUME);
+	}else{
+		$('#slider-range-min').slider("value", volume+VOLUME_STEP);
+	}
+	volumeSlide();
+}
+
+function volumeDown(){
+	var volume = $('#slider-range-min').slider("value");
+	if(volume <= MIN_VOLUME + VOLUME_STEP){
+		$('#slider-range-min').slider("value", MIN_VOLUME);
+	}else{
+		$('#slider-range-min').slider("value", volume-VOLUME_STEP);
+	}
+	volumeSlide();
+}
+
+function volumeSlide(){
+	$( "#volume" ).val($( "#slider-range-min" ).slider( "value" ));
+	apiswf.rdio_setVolume($( "#slider-range-min" ).slider( "value" )/(MAX_VOLUME-MIN_VOLUME));
+}
+
+function seekForward(){
+	if(songDuration != 0){
+		var currentPosition = $('#songProgress').slider("value");
+		if(songDuration < currentPosition + SEEK_STEP_SIZE){
+			currentPosition = Math.floor(songDuration - SEEK_STEP_SIZE);
+		}
+		$('#songProgress').slider("option", "value", Math.floor(currentPosition+SEEK_STEP_SIZE));
+		apiswf.rdio_seek(Math.floor(currentPosition+SEEK_STEP_SIZE));
+	}
+}
+
+function seekBackward(){
+	if(songDuration != 0){
+		var currentPosition = $('#songProgress').slider("value");
+		if(0 > currentPosition - SEEK_STEP_SIZE){
+			currentPosition = 0;
+		}
+		$('#songProgress').slider("option", "value", Math.floor(currentPosition-SEEK_STEP_SIZE));
+		apiswf.rdio_seek(Math.floor(currentPosition-SEEK_STEP_SIZE));
+	}
+}
 
 
-
-
-
-
-//Handy callbacks I don't want to delete
-
+/***************************************
+Callback Functions
+***************************************/
 callback_object.freeRemainingChanged = function freeRemainingChanged(remaining) {
 	$('#remaining').text(remaining);
 }
 
 callback_object.playingTrackChanged = function playingTrackChanged(playingTrack, sourcePosition) {
-  // The currently playing track has changed.
-  // Track metadata is provided as playingTrack and the position within the playing source as sourcePosition.
-  //if (playingTrack != null) {
-  //  $('#track').text(playingTrack['name']);
-  //  $('#album').text(playingTrack['album']);
-  //  $('#artist').text(playingTrack['artist']);
-  //  $('#art').attr('src', playingTrack['icon']);
-  //}
+	// Track metadata is provided as playingTrack and the position within the playing source as sourcePosition.
+	if(playingTrack != null){
+		songDuration = playingTrack["duration"];
+	}
+	//set up progress indicator
+	$( "#songProgress" ).slider("option", "max", songDuration);
+}
+
+callback_object.positionChanged = function positionChanged(position) {
+	//The position within the track changed to position seconds.
+	// This happens both in response to a seek and during playback.
+	$( "#songProgress" ).slider("option", "value", Math.floor(position));
 }
 
 callback_object.playingSourceChanged = function playingSourceChanged(playingSource) {
@@ -125,11 +210,6 @@ callback_object.muteChanged = function muteChanged(mute) {
   // Mute was changed. mute will either be true (for muting enabled) or false (for muting disabled).
 }
 
-callback_object.positionChanged = function positionChanged(position) {
-  //The position within the track changed to position seconds.
-  // This happens both in response to a seek and during playback.
-  $('#position').text(position);
-}
 
 callback_object.queueChanged = function queueChanged(newQueue) {
   // The queue has changed to newQueue.

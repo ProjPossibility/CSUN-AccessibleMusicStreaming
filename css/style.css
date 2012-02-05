@@ -227,20 +227,65 @@ header {border:1px solid black;padding:10px;}
 footer {border:1px solid black;padding:10px;}
 #container{padding:10px;}
 #main {padding:10px 0px;}
+
+.box_gradient {
+  background-color: #012533;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#012533), to(#054963)); /* Saf4+, Chrome */
+  background-image: -webkit-linear-gradient(top, #012533, #054963); /* Chrome 10+, Saf5.1+, iOS 5+ */
+  background-image:    -moz-linear-gradient(top, #012533, #054963); /* FF3.6 */
+  background-image:     -ms-linear-gradient(top, #012533, #054963); /* IE10 */
+  background-image:      -o-linear-gradient(top, #012533, #054963); /* Opera 11.10+ */
+  background-image:         linear-gradient(to bottom, #012533, #054963);
+}
+
+h2 {font-size:1.1em;padding:5px;margin:0;}
+h2 em {font-size:1.3em;color:red;}
+
+/*==================== */
+/* Player Style */
+/*==================== */
+
 #volume {
 	width:3em;
 	border-radius: 3px 3px 3px 3px;
+	border: 1px solid #ccc !important;
 	background-color: rgba(255, 255, 255, 0.5);
 	border: 1px solid grey;
 	text-align: right;
 }
-
+#volume_control {margin-left:102px;}
 
 .radio_player {
 	width:400px;
 	padding:10px;
-	border:1px solid black;;
+	border:1px solid black;
+	background-color: rgb( 5,73,99);
+	background: url('/img/vertical_cloth.png');
+	color: rgb(246,249,254);
 }
+
+.radio_player header {margin:0 0 3px 0 ;padding:0}
+
+section#playlistSection {
+/*	background-color: rgb(106,199,217);*/
+	border:1px solid black;
+}
+
+ol#playlist {}
+#playlist li {color:black;border-bottom:1px solid black;list-style:none;margin:0;}
+#playlist li:hover {background-color:white;}
+
+#album_art {
+	width:100px;
+	height:100px;
+	background-color:#6AC7D9; 
+	border:1px solid black;
+	float:left;
+	margin-right:5px;
+	
+}
+
+#album_art img {background-color:black;width:100px;height:100px;}
 
 
 
