@@ -211,17 +211,20 @@ td { vertical-align: top; }
    Author: 
    ========================================================================== */
 /* Logo Style */
-h1.logo_blue{
-	color: blue;
-	font-size:3.0em;
-
+h1.logo_thick{
+	color: black;
+	font-weight: 900;
+	font-size:72pt;
+	font-family: arial;
 }
 
 h1 em{
-	color: red;
-	font-size:1.9em;
-	line-height:.5em;
-
+	color: #ccc;
+	font-size:72pt;
+	font-weight: 100;
+	font-family: arial-narrow;
+	margin: 0;
+	padding: 0;
 }
 
 body{
@@ -244,8 +247,13 @@ footer {border:1px solid black;padding:10px;}
 }
 #main {padding:10px 0px;}
 
-h1 {font-size:2em;padding:0;margin:0px;}
-h1 em {margin:0;padding:0;}
+h1 {
+	font-size: 2em;
+	padding: 0;
+	margin: 0px;
+	letter-spacing: 10px;
+}
+
 h2 {font-size:1.5em;padding:5px;margin:0;}
 h2 em {font-size:1.5em;color:red;}
 
