@@ -40,20 +40,36 @@
 			<article>
 				<section class="radio_player">
 					<header>
-						<h2>Player</h2>
+						<h2 class="box_gradient">r<em>a</em>dio Player</h2>
 					</header>
-					<div id="apiswf"></div>
-					<input id="play_key" value="a997982"><br />
-					<button id="previous">Previous</button>
-					<button id="playPause">Play</button>
-					<button id="next">Next</button>
-					<div class= "visuallyhidden focusable">
-						<label for="volume">Volume: </label>
-						<input type="text" id="volume" style="border:0; color:#f6931f; font-weight:bold;" />
-					</div>
-					<div id="slider-range-min"></div>
+				
+					<section class="clearfix">
+						<div id="album_art"><img src="http://placekitten.com/g/98/98" alt"Album Art" /></div>
+						<div id="song_title">Song Title 1 (Album Name)</div>
+						<div id="playback_navigation">
+							<div id="apiswf"></div>
+							<input id="play_key" class="hidden" value="a997982"><br />
+							<button id="previous">Previous</button>
+							<button id="playPause">Play</button>
+							<button id="next">Next</button> 
+						</div>
+							<div class= "visuallyhidden focusable">
+								<label for="volume">Volume: </label>
+								<input type="text" id="volume" style="border:0; color:#f6931f; font-weight:bold;" />
+							</div>
+						<div id="volume_control"><div id="slider-range-min"></div></div>
+					</section>
+					<section id="playlistSection" class="clearfix">
+						<div class="box_gradient">Playlist</div>
+					<ol id="playlist">
+						<li>Song One</li>
+						<li>Song Two</li>
+						<li>Song Three</li>
+					</ol>
 					
+					</section>
 				</section>
+				
 				
 			</article>
 		</div>
