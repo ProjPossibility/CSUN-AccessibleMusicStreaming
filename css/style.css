@@ -281,6 +281,7 @@ hr{
 	border-top: 1px solid #777;
 	margin: 10px auto 5px auto;
 	width: 90%;
+	height: 2px;
 }
 /*==================== */
 /* Shortcut styles */
@@ -463,8 +464,6 @@ footer ul li {
 	margin:0;
 	padding:0 5px;	
 	font-size:.7em;
-
-
 }
 
 footer ul li.first {
@@ -494,6 +493,9 @@ footer ul li em {font-weight:bold;}
 	overflow: hidden;
 	height: auto;
 	text-align:center;
+	display: table;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 #play-backContainer a {
