@@ -38,52 +38,45 @@
 		<div id="main" role="main">
 			<article>
 				<div id="apiswf"></div>
-				<section class="radio_player">
-					<header>
-						<h2 class="box_gradient">r<em>a</em>dio Player</h2>
-					</header>
-					
+				<section id= "radio_player">
 					<section class="clearfix">
 						<div> <img src="http://placekitten.com/g/98/98" alt="Album Art" id="album_art"/></div>
 						<div id="song_title"></div>
 						<div id="artist"></div>
 						<div id="album"></div>
 						<div id="playback_navigation">
+					</section>
+					<input id="play_key" class="hidden" value="a997982"><br />
+					<div id="songProgress"></div>
+					<hr>	
+					<div id="play-backContainer" class= "box_round">
+						<ul id="playbackOptions">
+							<li class="rewindBtn">
+								<span><a id="previous" href="#" title="Rewind">Rewind</a></span>
+								<span><a id="previous" href="#" title="Rewind">Rewind</a></span>
+							</li>								
+							<li class="playBtn"><a id="playPause" href="#" title="Play">Play</a></li>
+							<!-- <li class="pauseBtn"><a href="#" title="Pause">Pause</a></li> -->															
+							<li class="forwardBtn">
+								<span><a id="next" href="#" title="Forward">Forward</a></span>
+								<span><a id="next" href="#" title="Forward">Forward</a></span>
+							</li>
+						</ul>
+						<div id= "volumeControlContainer">
+							<div id="slider-range-min"></div>
+						</div>
+					</div>
 						
-						<input id="play_key" class="hidden" value="a997982"><br />
-							
-						<div id="play-backContainer">
-							<ul class="playbackOptions">
-								<li class="rewindBtn">
-									<span><a id="previous" href="#" title="Rewind">Rewind</a></span>
-									<span><a id="previous" href="#" title="Rewind">Rewind</a></span>
-								</li>								
-
-								<li class="playBtn"><a id="playPause" href="#" title="Play">Play</a></li>
-								<!--
-								<li class="pauseBtn"><a href="#" title="Pause">Pause</a></li>
-								-->															
-
-								
-								<li class="forwardBtn">
-									<span><a id="next" href="#" title="Forward">Forward</a></span>
-									<span><a id="next" href="#" title="Forward">Forward</a></span>
-								</li>
-								
-						</ul>	
-		
-						</div>
-						</div>
-						<div id="songProgress"></div>
 						<div class= "visuallyhidden focusable">
 							<label for="volume">Volume: </label>
 							<input type="text" id="volume" style="border:0; color:#f6931f; font-weight:bold;" />
 						</div>
+<!--						<section class="clearfix">
+							<div id="volume_control"><div id="slider-range-min"></div></div>
+						</section>	-->
 					</section>
-					<section class="clearfix">
-						<div id="volume_control"><div id="slider-range-min"></div></div>
-					</section>
-					<section id="playlistSection" class="clearfix">
+
+	<!--				<section id="playlistSection" class="clearfix">
 						<div class="box_gradient">Playlist</div>
 						<ol id="playlist">
 							<li>Song One</li>
@@ -92,9 +85,7 @@
 						</ol>
 
 					</section>
-				</section>
-				
-				
+	-->				
 			</article>
 		</div>
 		<footer class="clearfix">
