@@ -1,21 +1,26 @@
 # Project Possibility: SS12 Competition #
 ### Accessible Web-Based Music Application: rAdio ###
 
+##### GOALS #####
+
+rADIO goals can be found [here](https://github.com/ProjPossibility/CSUN-AccessibleMusicStreaming/wiki/SS12:-Project-Possibility-rAdio-Goals).
+
 ##### WHAT IS rAdio? #####
 
-rAdio is an accessible web-based music application that has multiple accessible features including: playback navigation, HTML5/ARIA compliant, shortcut keys, large buttons, and large text.  It is accessible to both the blind and people with low vision.  It has all of the normal features of a normal music player including: track title, artist, album title, album art, and volume control. 
+rAdio is an accessible web-based music application that has multiple accessible features including: playback navigation, HTML5/ARIA compliance, shortcut keys, large buttons, and large text.  It is accessible to both the blind and vision impaired.  It also has all of the normal features and design of a non-accesible player.  
 
 ##### INSTRUCTIONS #####
 
 Shortcut Keys:
+Press the following keys on your keyboard to perform their associated rAdio player funtion.
 
 	* space : play/pause
-	* left : previous track
+	* left  : previous track
 	* right : next track
-	* up : increase volume
-	* down : decrease volume
-	* f : seek foreward 10 seconds
-	* d : seek backward 10 seconds	
+	* up    : increase volume
+	* down  : decrease volume
+	* f     : seek foreward 10 seconds
+	* d     : seek backward 10 seconds	
 
 ##### WHAT TECHNOLOGIES DOES rAdio UTILIZE? #####
 
@@ -23,10 +28,8 @@ rAdio utilizes JQuery, JavaScript, and the RDIO API. [RDIO API](http://developer
 
 ##### WHAT CHANGES WERE MADE TO THE RDIO PLAYER #####
   
-The RDIO player has shortcut keys for play/pause, previous, next, and playlist.  However, it does not have shortcut keys for volume control or seek functions.   
- 
-##### HOW DO THE SHORTCUT KEYS WORK? #####
-JavaScript recognizes which key was pressed. Each shortcut key is then associated with a function of the player. 
+The RDIO player has shortcut keys for play/pause, previous, next, and playlist.  However, it does not have shortcut keys for volume control or seek functions.  The RDIO player is not Aria Compliant, and the screan reader could not easily read it.    
+We created the user friendly rAdio interface and its unique design.    
 
 ##### LIST OF AUTHORS: #####
   
@@ -34,14 +37,19 @@ JavaScript recognizes which key was pressed. Each shortcut key is then associate
   2. Luis Fuentes
   3. Ursula Messick
   4. John-Luke Laue
-
   
 Mentor: Mike Matuzak
+ 
+##### Future Improvements #####
+
+Our Future Improvments wiki page can be viewed [here](https://github.com/ProjPossibility/CSUN-AccessibleMusicStreaming/wiki/SS12:-Project-Possibility-rAdio-Future-Improvements). 
+ 
  
 ##### CONTACT INFO #####
 
 Please visit [Project Possibility](http://projectpossibility.org/).
   
+
   
   
   
