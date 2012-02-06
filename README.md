@@ -39,6 +39,9 @@ Mentor: Mike Matuzak
 
 Please visit [Project Possibility](http://projectpossibility.org/).
   
+##### GOALS #####
+
+Goals can be found [here](https://github.com/ProjPossibility/CSUN-AccessibleMusicStreaming/wiki/SS12:-Project-Possibility-rAdio-Goals).
   
   
   
