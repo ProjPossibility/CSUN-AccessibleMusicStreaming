@@ -1,6 +1,10 @@
 # Project Possibility: SS12 Competition #
 ### Accessible Web-Based Music Application: rAdio ###
 
+##### GOALS #####
+
+rADIO goals can be found [here](https://github.com/ProjPossibility/CSUN-AccessibleMusicStreaming/wiki/SS12:-Project-Possibility-rAdio-Goals).
+
 ##### WHAT IS rAdio? #####
 
 rAdio is an accessible web-based music application that has multiple accessible features including: playback navigation, HTML5/ARIA compliance, shortcut keys, large buttons, and large text.  It is accessible to both the blind and people with low vision.  It also has all of the normal features and design of a non-accesible player.  
@@ -8,14 +12,15 @@ rAdio is an accessible web-based music application that has multiple accessible 
 ##### INSTRUCTIONS #####
 
 Shortcut Keys:
+Press the following keys on your keyboard to perform their associated rAdio player funtion.
 
 	* space : play/pause
-	* left : previous track
+	* left  : previous track
 	* right : next track
-	* up : increase volume
-	* down : decrease volume
-	* f : seek foreward 10 seconds
-	* d : seek backward 10 seconds	
+	* up    : increase volume
+	* down  : decrease volume
+	* f     : seek foreward 10 seconds
+	* d     : seek backward 10 seconds	
 
 ##### WHAT TECHNOLOGIES DOES rAdio UTILIZE? #####
 
@@ -35,13 +40,16 @@ We created the user friendly rAdio interface and its unique design.
   
 Mentor: Mike Matuzak
  
+##### Future Improvements #####
+
+Our Future Improvments wiki page can be viewed [here](https://github.com/ProjPossibility/CSUN-AccessibleMusicStreaming/wiki/SS12:-Project-Possibility-rAdio-Future-Improvements). 
+ 
+ 
 ##### CONTACT INFO #####
 
 Please visit [Project Possibility](http://projectpossibility.org/).
   
-##### GOALS #####
 
-Goals can be found [here](https://github.com/ProjPossibility/CSUN-AccessibleMusicStreaming/wiki/SS12:-Project-Possibility-rAdio-Goals).
   
   
   
