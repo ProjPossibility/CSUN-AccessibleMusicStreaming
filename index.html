@@ -6,161 +6,149 @@
 <!--[if gt IE 8]><!-->
 <html class="no-js" lang="en"> <!--<![endif]-->
 	<head>
-	  <meta charset="utf-8">
+		<meta charset="utf-8">
 
-	  <title>rAdio :: Accessible rdio Player</title>
-	  <meta name="description" content="">
-	  <meta name="author" content="">
+		<title>rAdio :: Accessible rdio Player</title>
+		<meta name="description" content="">
+		<meta name="author" content="">
 
-	  <!-- Mobile viewport optimized: j.mp/bplateviewport -->
-	  <meta name="viewport" content="width=device-width,initial-scale=1">
+		<!-- Mobile viewport optimized: j.mp/bplateviewport -->
+		<meta name="viewport" content="width=device-width,initial-scale=1">
 
-	  <!-- CSS: implied media=all -->
-	  <link rel="stylesheet" href="css/style.css">
-	  <link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.8.17.custom.css">
-	  <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+		<!-- CSS: implied media=all -->
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.8.17.custom.css">
+		<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
 
-	  <style type="text/css">
-	    #slider { margin: 10px; }
-	  </style>
-	  <!-- end CSS-->
+		<style type="text/css">
+		#slider { margin: 10px; }
+		</style>
+		<!-- end CSS-->
 
 
-	  <script src="js/libs/modernizr-2.0.6.min.js"></script>
+		<script src="js/libs/modernizr-2.0.6.min.js"></script>
 	</head>
 
 	<body role="application">
-
-	  <div id="container">
-		<header>
-			<h1 class="logo_thick">r<em>a</em>dio</h1>
-		</header>
-		<div id="main" role="main">
-			<article>
-				<section id="shortcut_keys" class= "focusable box_shadow_big visuallyhidden" tabindex="0">	<!-- class 'visuallyhidden' must be last --->
-					<h2>Shortcut Keys</h2>
-					<h3>You may use the following commands on your keyboard to access shortcuts for this player</h3>
-					<dl>
-						<dt>?</dt>
-						<dd>shortcut key listing - this menu</dd>
-						
-						<dt>spacebar</dt>
-						<dd>play or pause the the music player</dd>
-						
-						<dt>right arrow key</dt>
-						<dd>previous song<dd>
-							
-						<dt>left arrow key</dt>
-						<dd>next song</dd>
-						
-						<dt>up arrow key</dt>
-						<dd>increase volume</dd>
-						
-						<dt>down arrow key<dt>
-						<dd>decrease volume</dd>
-						
-						<dt>f</dt>
-						<dd>fast forwards music 10 seconds</dd>
-						
-						<dt>d</dt>
-						<dd>rewind music 10 seconds</dd>
-						
-					</dl>
-			</section>
-			<div id="apiswf"></div>
-				<section id= "radio_player" class= "box_round">
-					<section class="clearfix" >
-						<div><img src="img/cd.png" alt="Album Art" id="album_art"/></div>
-						<div id="song_title"></div>
-						<div id="artist"></div><br />
-						<div id="album"></div>
-					</section>
-					<input id="play_key" class="hidden" value="a997982"><br />
-					<div id="songProgress"></div>	<!-- REPLACED WITH SEEK BAR	-->
-					<div id= "playerTime"></div>	<!-- REPLACED WITH TEXT SHOWING TRACK POSITION -->
-					<hr>
-					<div id="play-backContainer" class="box_round">
-						<div class="clearfix" id="inner_container">
-							<div id="player_container">
-								<div id="player_image_container">
-									<div class="clearfix" id="playerNowPlayingContainer">
-						        		<div class="clearfix">
-						          			<button class="" title="play previous song" id="previous"></button>
-						          			<button class="" title="play song" id="playPause"></button>
-						          			<button class="" title="pause song" id="pauseButton"></button>
-						          			<button class="" id="next" title="play next song"></button>
-										</div>
-						      		</div> <!-- end #playerNowPlayingContainer-->
-								</div>
-							</div>
-						 </div> 
-					</div> <!-- end #play-backContainer -->
+		<div id="container">
+			<header>
+				<h1 class="logo_thick">r<em>a</em>dio</h1>
+			</header>
+			<div id="main" role="main">
+				<article>
+					<section id="shortcut_keys" class= "focusable box_shadow_big visuallyhidden" tabindex="0">	<!-- class 'visuallyhidden' must be last --->
+						<h2>Shortcut Keys</h2>
+						<h3>You may use the following commands on your keyboard to access shortcuts for this player</h3>
+						<dl>
+							<dt>?</dt>
+							<dd>shortcut key listing - this menu</dd>
+				
+							<dt>spacebar</dt>
+							<dd>play or pause the the music player</dd>
+				
+							<dt>right arrow key</dt>
+							<dd>previous song<dd>
 					
+							<dt>left arrow key</dt>
+							<dd>next song</dd>
+				
+							<dt>up arrow key</dt>
+							<dd>increase volume</dd>
+				
+							<dt>down arrow key<dt>
+							<dd>decrease volume</dd>
+				
+							<dt>f</dt>
+							<dd>fast forwards music 10 seconds</dd>
+				
+							<dt>d</dt>
+							<dd>rewind music 10 seconds</dd>
+				
+						</dl>
+					</section>
+					<div id="apiswf"></div>
+					<section id= "radio_player" class= "box_round">
+						<section class="clearfix" >
+							<div><img src="img/cd.png" alt="Album Art" id="album_art"/></div>
+							<div id="song_title"></div>
+							<div id="artist"></div><br />
+							<div id="album"></div>
+						</section>
+						<input id="play_key" class="hidden" value="a997982"><br />
+						<div id="songProgress"></div>	<!-- REPLACED WITH SEEK BAR	-->
+						<div id= "playerTime"></div>	<!-- REPLACED WITH TEXT SHOWING TRACK POSITION -->
+						<hr>
+						<div id="play-backContainer" class="box_round">
+							<div class="clearfix" id="inner_container">
+								<div id="player_container">
+									<div id="player_image_container">
+										<div class="clearfix" id="playerNowPlayingContainer">
+											<div class="clearfix">
+									  			<button class="" title="play previous song" id="previous"></button>
+									  			<button class="" title="play song" id="playPause"></button>
+									  			<button class="" title="pause song" id="pauseButton"></button>
+									  			<button class="" id="next" title="play next song"></button>
+											</div>
+								  		</div> <!-- end #playerNowPlayingContainer-->
+									</div>
+								</div>
+							 </div> 
+						</div> <!-- end #play-backContainer -->
+			
 						<div id= "volumeControlContainer">
 							<div id="slider-range-min"></div>
 						</div>
-					</div>
-						
-						<div class= "visuallyhidden focusable">
-							<label for="volume">Volume: </label>
-							<input type="text" id="volume" style="border:0; color:#f6931f; font-weight:bold;" />
-						</div>
 					</section>
-								
-			</article>
-		</div>
+			
+					<section id= "playlist-wrapper" class= "box_round">
+						<section id= "playlist">
+							<a href="#" class= "playlistEntry" rel= "0">
+								<img src="http://cdn3.rd.io/album/0/c/d/0000000000095dc0/square-200.jpg" alt="Album Art" id="album_art"/>
+								<div id="artist">The Morning Benders</div><br />
+								<div id="album">Big Echo</div>
+							</a>
+							<hr>
+							<a href="#" class= "playlistEntry" rel= "1">
+								<img src="http://cdn3.rd.io/album/6/b/3/00000000000fd3b6/square-200.jpg" alt="Album Art" id="album_art"/>
+								<div id="artist">M83</div><br />
+								<div id="album">Hurry Up We're Dreaming</div>
+							</a>
+						</section>
+					</section>
+				</article>
+			</div>
+		</div> <!--! end of #container -->
+		
 		<footer class="clearfix">
 			<ul id= "poweredBy">
 				<li class="first">&copy; 2012 by TeamGreen</li>
 				<li style= "float: right;"><em>created by:</em><br/> Team Green</li>
+				<li style= "float: right;"><em>sponsored by:</em><br/> <a title="projectpossibility.org website" href="http://projectpossibility.org"><img height="30" src="/img/pp_logo.png" alt="projectpossibility.org logo"></a></li>
 				<li style= "float: right;"><em>powered by:</em><br/>
 				<a title="rdio.com website" href="hhtp://www.rdio.com"><img height="30" src="/img/RdioBlueLogo.png" alt="rdio.com logo"></a></li>
-				<li class="last"><em>sponsored by:</em><br/> <a title="projectpossibility.org website" href="http://projectpossibility.org"><img height="30" src="/img/pp_logo.png" alt="projectpossibility.org logo"></a></li>
 			</ul>
 		</footer>
-	  </div> <!--! end of #container -->
 
+		<!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')</script>
+		<script src="https://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
+		<script src="js/token.js"></script>
+		<script src="js/controls.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+		<script src="js/shortcuts.js"></script>
 
+		<!-- scripts concatenated and minified via ant build script-->
+		<script defer src="js/plugins.js"></script>
+		<script defer src="js/script.js"></script>
+		<!-- end scripts-->
 
-	  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
-	  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-	  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')</script>
-	  <script src="https://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
-	  <script src="js/token.js"></script>
-	  <script src="js/controls.js"></script>
-	  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
-	  <script src="js/shortcuts.js"></script>
-
-
-	<script>/*
-		$(function() {
-			$( "#slider-range-min" ).slider({
-				range: "min",
-				value: 37,
-				min: 1,
-				max: 100,
-				slide: function( event, ui ) {
-					$( "#volume" ).val( ui.value );
-				}
-			});
-			$( "#volume" ).val( $( "#slider-range-min" ).slider( "value" ) );
-		});*/
-		</script>
-
-
-	  <!-- scripts concatenated and minified via ant build script-->
-	  <script defer src="js/plugins.js"></script>
-	  <script defer src="js/script.js"></script>
-	  <!-- end scripts-->
-
-
-
-	  <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you want to support IE 6.
+		<!-- Prompt IE 6 users to install Chrome Frame. Remove this if you want to support IE 6.
 		   chromium.org/developers/how-tos/chrome-frame-getting-started -->
-	  <!--[if lt IE 7 ]>
+		<!--[if lt IE 7 ]>
 		<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
 		<script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
-	  <![endif]-->
-	  
+		<![endif]-->
+
 	</body>
 </html>

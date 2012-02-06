@@ -30,6 +30,8 @@ var songDuration = 0;
 var SEEK_STEP_SIZE = 10;			//seek 20 seconds at a time
 var shortcut_keys_visible = 0;
 
+var albumKeys = ["a613824", "a1037238"];
+
 
 // a global variable that will hold a reference to the api swf once it has loaded
 var apiswf = null;
@@ -62,10 +64,14 @@ $(document).ready(function() {
 	shortcut.add('down', function(){volumeDown(); return false;});
 	shortcut.add('f', seekForward);
 	shortcut.add('d', seekBackward);
-//	shortcut.add("/", helperMenuToggle);
 	document.onkeyup = function(event){		/* Work around for "Shift+?" */
 		if(event.keyCode == 191){
 			shortcutKeysToggle();
+			if(shortcut_keys_visible == 0){
+				$("#shortcut_keys").blur();
+			}else{
+				$("#shortcut_keys").focus();
+			}
 		}
 	};
 
@@ -95,6 +101,11 @@ $(document).ready(function() {
 		});
 		$( "#songProgress" ).attr("aria-live", "off");
 	});
+	
+	//Album playlist events
+	/*$(".playlistEntry").click(function(){
+		playAlbum(this.rel);
+	});*/
 });
 
 // the global callback object
@@ -222,7 +233,13 @@ function shortcutKeysToggle(){
 	$("#shortcut_keys").attr("class", classes.join(" "));
 }
 
-
+function playAlbum(i){
+	if(i < albumKeys.length){
+		pause();
+		play(albumKeys[i]);
+	}
+	console.log("ending playAlbym");
+}
 /***************************************
 Callback Functions
 ***************************************/
