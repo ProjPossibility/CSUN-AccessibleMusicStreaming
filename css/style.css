@@ -315,6 +315,7 @@ hr{
 	padding:5px;
 	font-variant:small-caps;
 }
+/*
 #shortcut_keys dl {
 	margin:0;
 	padding:0;
@@ -335,13 +336,28 @@ hr{
 	padding-left:8px;
 	font-variant:small-caps;
 	
+} */
+ul#shortcut_keys {margin:0;padding:0;}
+
+#shortcut_keys li {
+	list-style:none;
+	border-bottom:1px solid black;
+	margin:0;
+	padding:0;
+	font-variant:small-caps;
+}
+#shortcut_keys li.shortcut {
+	font-size:1.2em;
+	font-weight:bold;
+	border:none;
+	margin-top:8px;
 }
 
 
 /*==================== */
 /* Player Style */
 /*==================== */
-.
+#songProgress {font-size:12px;}
 #volume {
 	width:3em;
 	border-radius: 3px 3px 3px 3px;
@@ -355,10 +371,8 @@ hr{
 	padding:10px;
 	background-color:black;
 	margin:2px 0;
-	}
-ui-slider, ui-slider-horizontal {
-	height:4px;
 }
+
 
 #radio_player {
 	width:550px;
@@ -368,12 +382,6 @@ ui-slider, ui-slider-horizontal {
 }
 
 /* rdio.com Player Style */
-#playerNowPlayingContainer {
-    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAALCAYAAADWUaeSAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAFVJREFUeNrs0sEJgFAMBcEEUUQ+3q3BDm0+9vGYKWHZrqqvIETPzCsDSUM/MpA09C0DSUMvGUga+pKBpKFPGUga+pCBpKF3GUgaepOBpKFbBlL8AgwAVboe5wOLTd8AAAAASUVORK5CYII=");
-    background-position: 0 0;
-    background-repeat: no-repeat;
-    padding: 9px;
-}
 #playerNowPlayingImage {
     display: block;
     height: 180px;
@@ -535,6 +543,7 @@ footer ul li em {font-weight:bold;}
 #volumeControlContainer{
 	margin-top: 10px;
 	clear: left;
+	font-size:10px;
 }
 
 

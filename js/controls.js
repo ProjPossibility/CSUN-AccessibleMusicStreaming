@@ -51,8 +51,9 @@ $(document).ready(function() {
       1, 1, '9.0.0', 'expressInstall.swf', flashvars, params, attributes);
 
 	// set up the controls
-	$('#playPause').click(playPause);
 	$('#previous').click(previous);
+	$('#playPause').click(play);
+	$('#pauseButton').click(pause);
 	$('#next').click(next);
 	shortcut.add('space', playPause)
 	shortcut.add('left', previous);
@@ -119,6 +120,21 @@ function previous(){
 	apiswf.rdio_previous();
 }
 
+function play(){
+	if(myPlayState == null){	//play for the first time
+		apiswf.rdio_play($('#play_key').val());
+	}
+	else if(myPlayState == 0 || myPlayState == 4){	//resume from pause
+		apiswf.rdio_play();
+	}
+}
+
+function pause(){
+	if(myPlayState == 1){
+		apiswf.rdio_pause();
+	}
+}
+
 function next(){
 	apiswf.rdio_next();
 }
@@ -126,15 +142,15 @@ function next(){
 function playPause(){
 	if(myPlayState == null){	//play for the first time
 		apiswf.rdio_play($('#play_key').val());
-		$('#playPause').text("Pause");
+	//	$('#playPause').text("Pause");
 	}
-	else if(myPlayState == 0 || myPlayState ==4){	//resume from pause
+	else if(myPlayState == 0 || myPlayState == 4){	//resume from pause
 		apiswf.rdio_play();
-		$('#playPause').text("Pause");
+	//	$('#playPause').text("Pause");
 	}
 	else{	//pause
 		apiswf.rdio_pause();
-		$('#playPause').text("Play");
+	//	$('#playPause').text("Play");
 	}
 }
 
@@ -204,7 +220,6 @@ function shortcutKeysToggle(){
 	}
 	var newOne = classes.join(" ");
 	$("#shortcut_keys").attr("class", classes.join(" "));
-	console.log("new class attr: " + newOne);
 }
 
 

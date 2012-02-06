@@ -28,12 +28,12 @@ We created the user friendly rAdio interface and its unique design.
 
 ##### LIST OF AUTHORS: #####
   
-  1. Ursula Messick
-  2. Kevork Sepetci
-  3. Luis Fuentes
+  1. Kevork Sepetci
+  2. Luis Fuentes
+  3. Ursula Messick
   4. John-Luke Laue
-
-Mentor: Mike
+  
+Mentor: Mike Matuzak
  
 ##### CONTACT INFO #####
 
