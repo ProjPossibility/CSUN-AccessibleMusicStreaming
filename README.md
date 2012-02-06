@@ -3,7 +3,7 @@
 
 ##### WHAT IS rAdio? #####
 
-rAdio is an accessible web-based music application that has multiple accessible features including: playback navigation, HTML5/ARIA compliant, shortcut keys, large buttons, and large text.  It is accessible to both the blind and people with low vision.  It has all of the normal features of a normal music player including: track title, artist, album title, album art, and volume control. 
+rAdio is an accessible web-based music application that has multiple accessible features including: playback navigation, HTML5/ARIA compliance, shortcut keys, large buttons, and large text.  It is accessible to both the blind and people with low vision.  It also has all of the normal features and design of a non-accesible player.  
 
 ##### INSTRUCTIONS #####
 
@@ -23,10 +23,8 @@ rAdio utilizes JQuery, JavaScript, and the RDIO API. [RDIO API](http://developer
 
 ##### WHAT CHANGES WERE MADE TO THE RDIO PLAYER #####
   
-The RDIO player has shortcut keys for play/pause, previous, next, and playlist.  However, it does not have shortcut keys for volume control or seek functions.   
- 
-##### HOW DO THE SHORTCUT KEYS WORK? #####
-JavaScript recognizes which key was pressed. Each shortcut key is then associated with a function of the player. 
+The RDIO player has shortcut keys for play/pause, previous, next, and playlist.  However, it does not have shortcut keys for volume control or seek functions.  The RDIO player is not Aria Compliant, and the screan reader could not easily read it.    
+We created the user friendly rAdio interface and its unique design.    
 
 ##### LIST OF AUTHORS: #####
   
@@ -34,7 +32,6 @@ JavaScript recognizes which key was pressed. Each shortcut key is then associate
   2. Luis Fuentes
   3. Ursula Messick
   4. John-Luke Laue
-
   
 Mentor: Mike Matuzak
  
