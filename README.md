@@ -7,7 +7,7 @@ rADIO goals can be found [here](https://github.com/ProjPossibility/CSUN-Accessib
 
 ##### WHAT IS rAdio? #####
 
-rAdio is an accessible web-based music application that has multiple accessible features including: playback navigation, HTML5/ARIA compliance, shortcut keys, large buttons, and large text.  It is accessible to both the blind and people with low vision.  It also has all of the normal features and design of a non-accesible player.  
+rAdio is an accessible web-based music application that has multiple accessible features including: playback navigation, HTML5/ARIA compliance, shortcut keys, large buttons, and large text.  It is accessible to both the blind and vision impaired.  It also has all of the normal features and design of a non-accesible player.  
 
 ##### INSTRUCTIONS #####
 
