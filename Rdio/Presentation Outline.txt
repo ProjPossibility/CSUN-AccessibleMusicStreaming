@@ -1,0 +1,14 @@
+Obstacles
+--------------------------------------
+-Can't hear commands over music
+-
+
+
+Advantages
+--------------------------------------
+-HTML5 semantic elements
+
+
+Useful Links
+--------------------------------------
+-HTML 5 boilerplate
